@@ -22,9 +22,9 @@ Contributor :
 
 - Copy the link below and clone the repository to your local computer.
 
-    `git clone`
+  `git clone`
 
-2. Right click on index.html file in the folder and select your browser or in VS Code, select ***Open with Live Server*** if you have Live Server extension installed
+2. Right click on index.html file in the folder and select your browser or in VS Code, select **_Open with Live Server_** if you have Live Server extension installed
 
  <hr>
 
@@ -35,9 +35,19 @@ The app features/specifications outline is as follows.
 ### Features
 
 - **Sprint 1** : Completed ✔
+
   - [Task -1](https://github.com/generation-org/genxi-jwd-final-project/tree/master/task-1) - App Wireframes
   - [Task -2](https://github.com/generation-org/genxi-jwd-final-project/tree/master/task-2) - Implement your Wireframes using Bootstrap
   - [Task -3](https://github.com/generation-org/genxi-jwd-final-project/tree/master/task-3) - Create a Task Card layout / Task List component
+
+  - Sprint 1 UI ScreenShoots
+
+  | Sprint -1 Landing page | Sprint -1 Form Popup Modal |
+  | ---------------------- | -------------------------- |
+
+  |<img src="./img/sprint1_1_main.PNG" alt="Form Landing page" width="400" height="500"/>
+  |<img src="./img/sprint1_2_form_modal.PNG" alt="Form popup modal photo" width="400" height="500"/>|
+
 - **Sprint 2** : To Be Commenced (27 - 31 Jan 22)
 
   - [Task -4](https://github.com/generation-org/genxi-jwd-final-project/tree/master/task-4) - Create a function to validate the task form
@@ -59,12 +69,10 @@ The app features/specifications outline is as follows.
 **Project Kickoff : 20 December 2021** - The following Trello Board demonstrated the sprint tasks planning status and tasks breakdown.
 ![Project Kickoff Trello Status](./img/project_kickoff_trello.JPG)
 
-
 ### Spring 2
 
 **Project Kickoff : 27 January 2022** -
 **Project Kickoff : 31 January 2022** -
-
 
 ### Spring 3
 
