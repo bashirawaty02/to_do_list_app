@@ -42,11 +42,9 @@ The app features/specifications outline is as follows.
 
   - Sprint 1 UI ScreenShoots
 
-  | Sprint -1 Landing page | Sprint -1 Form Popup Modal |
-  | ---------------------- | -------------------------- |
-
-  |<img src="./img/sprint1_1_main.PNG" alt="Form Landing page" width="400" height="500"/>
-  |<img src="./img/sprint1_2_form_modal.PNG" alt="Form popup modal photo" width="400" height="500"/>|
+  | Sprint -1 Landing page                                                                 | Sprint -1 Form Popup Modal                                                                        |
+  | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+  | <img src="./img/sprint1_1_main.PNG" alt="Form Landing page" width="400" height="500"/> | <img src="./img/sprint1_2_form_modal.PNG" alt="Form popup modal photo" width="400" height="500"/> |
 
 - **Sprint 2** : To Be Commenced (27 - 31 Jan 22)
 
