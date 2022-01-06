@@ -8,7 +8,7 @@ This repository contains the **_To Do List App_** application project code. This
 
 The application enables the user to add tasks, update and delete tasks.
 
-Github Repo: [https://github.com/ktSuW/my-task-planner]
+Github Repo: [https://github.com/ktSuW/to_do_list_app]
 
 Contributor :
 
@@ -22,7 +22,7 @@ Contributor :
 
 - Copy the link below and clone the repository to your local computer.
 
-  `git clone`
+  `git clone https://github.com/ktSuW/to_do_list_app`
 
 2. Right click on index.html file in the folder and select your browser or in VS Code, select **_Open with Live Server_** if you have Live Server extension installed
 
@@ -67,6 +67,7 @@ The app features/specifications outline is as follows.
 ### Spring 1
 
 **Project Kickoff : 20 December 2021** - The following Trello Board demonstrated the sprint tasks planning status and tasks breakdown.
+
 ![Project Kickoff Trello Status](./img/project_kickoff_trello.JPG)
 
 ### Spring 2
