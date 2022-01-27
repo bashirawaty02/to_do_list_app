@@ -12,8 +12,8 @@ Github Repo: [https://github.com/ktSuW/to_do_list_app]
 
 Contributor :
 
-- Victoria 
-- David 
+- Victoria
+- David
 - [Su](https://github.com/ktSuW)
 
 <hr>
@@ -86,5 +86,7 @@ The app features/specifications outline is as follows.
 
 ## References
 
+- Assessment Criteria, https://docs.google.com/spreadsheets/d/1oKMVurjg8SW7cRU4-NwUxTxSvav4l5_W7yvDCHd3DKo/edit#gid=1967728531
+- Task instruction, https://github.com/workForClass/final-jwd7/tree/master/task-4%20Task%20Form%20Input%20Validation
 - <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 - Spring 1 Brief - Scorecard Rubric , [Generation Australia](https://github.com/generation-org/genxi-jwd-final-project)
