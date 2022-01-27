@@ -48,6 +48,82 @@ newTaskForm.addEventListener("submit", (event) => {
     status
   );
 });
+
+// validate the form
+const validFormFieldInput = (
+  name,
+  taskDescription,
+  assignedTo,
+  dueDate,
+  status
+) => {
+  // Setting boolean values
+  let isNameValid = false;
+  let isDescriptionValid = false;
+  let isAssignedToValid = false;
+  let isDueDateValid = false;
+  let isStatusValid = false;
+  clearErrorMessage(newTaskNameInput);
+  clearErrorMessage(newTaskDescription);
+  clearErrorMessage(newTaskAssignedTo);
+  clearErrorMessage(newTaskDueDate);
+  clearErrorMessage(validationStatus);
+  // Name Validation
+  if (name === "" || name === null) {
+    //Show error and Add error class
+    setErrorFor(newTaskNameInput, "Name cannot be blank.");
+  } else if (name.length <= 5) {
+    setErrorFor(newTaskNameInput, "Must be greater than 5.");
+  } else {
+    setSuccessFor(newTaskNameInput, "Correct input!");
+    isNameValid = true;
+  }
+  // for task description
+  if (taskDescription === "" || taskDescription === null) {
+    setErrorFor(newTaskDescription, "Description cannot be blank.");
+  } else if (taskDescription.length <= 5) {
+    setErrorFor(newTaskDescription, "Must be greater than 5.");
+  } else {
+    setSuccessFor(newTaskDescription, "Correct input!");
+    isDescriptionValid = true;
+  }
+  // for assigned to
+  if (assignedTo === "" || assignedTo === null) {
+    setErrorFor(newTaskAssignedTo, "Description cannot be blank.");
+  } else if (assignedTo.length <= 5) {
+    setErrorFor(newTaskAssignedTo, "Must be greater than 5.");
+  } else {
+    setSuccessFor(newTaskAssignedTo, "Correct input!");
+    isAssignedToValid = true;
+  }
+  // for due date
+  const today = formatDate(new Date());
+  if (dueDate === "") {
+    setErrorFor(newTaskDueDate, "Due date cannot be blank.");
+  } else if (dueDate < today) {
+    setErrorFor(newTaskDueDate, "Due date cannot be in the past");
+  } else {
+    setSuccessFor(newTaskDueDate, "Correct input!");
+    isDueDateValid = true;
+  }
+  // for status
+  if (status === "" || status === null) {
+    setErrorFor(validationStatus, "Please select an option.");
+  } else {
+    setSuccessFor(validationStatus, "Correct input!");
+    console.log(status);
+    console.log(validationStatus);
+    isStatusValid = true;
+  }
+  return (
+    isNameValid &&
+    isDescriptionValid &&
+    isAssignedToValid &&
+    isDueDateValid &&
+    isStatusValid
+  );
+};
+
 // format date
 const formatDate = (date) => {
   let month = date.getMonth() + 1;

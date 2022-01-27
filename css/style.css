@@ -2,9 +2,9 @@
   --blue: #4285f4;
   --red: #db4437;
   --yellow: #f4b400;
-  --green: #CFD232;
-  --darkgreen: #3C4504;
-  --notebook : #EEC8A1;
+  --green: #cfd232;
+  --darkgreen: #3c4504;
+  --notebook: #eec8a1;
 }
 
 body {
@@ -12,55 +12,56 @@ body {
 }
 
 .bg-img {
-    background: url(../img/bg.jpg) center no-repeat;
-    height: 30vh;
-    background-size: cover;
-    flex-direction: column;
-    border: var(--green) solid;
+  background: url(../img/bg.jpg) center no-repeat;
+  height: 30vh;
+  background-size: cover;
+  flex-direction: column;
+  border: var(--green) solid;
 }
 
-
 h1 {
- margin-top: 10rem;
+  margin-top: 10rem;
   font-size: 3rem;
   font-weight: 700;
   text-align: center;
   width: auto;
   color: var(--darkgreen);
   background: linear-gradient(
-    rgba(227, 231, 173, 0.2),
-    rgba(255, 255, 255, 0.3)
-  ), center no-repeat;
+      rgba(227, 231, 173, 0.2),
+      rgba(255, 255, 255, 0.3)
+    ),
+    center no-repeat;
   padding: 3rem;
   margin-bottom: 5rem;
   text-transform: uppercase;
   letter-spacing: 0.6rem;
   /* border-bottom: 0.3rem solid var(--darkgreen); */
   text-shadow: 0.2rem 0.2rem 0.5rem #555;
-
 }
 
 h2 {
   margin-top: 3rem;
-   font-size: 3rem;
-   font-weight: 400;
-   text-align: center;
-   width: auto;
-   color: var(--darkgreen);
-   background: linear-gradient(
-     rgba(227, 231, 173, 0.2),
-     rgba(255, 255, 255, 0.3)
-   ), center no-repeat;
-   padding: 0 3rem;
-   text-transform: capitalize;
-   letter-spacing: 0.6rem;
-   border-bottom: 0.3rem solid var(--green);
-   text-shadow: 0.2rem 0.2rem 0.5rem #555;
+  font-size: 3rem;
+  font-weight: 400;
+  text-align: center;
+  width: auto;
+  color: var(--darkgreen);
+  background: linear-gradient(
+      rgba(227, 231, 173, 0.2),
+      rgba(255, 255, 255, 0.3)
+    ),
+    center no-repeat;
+  padding: 0 3rem;
+  text-transform: capitalize;
+  letter-spacing: 0.6rem;
+  border-bottom: 0.3rem solid var(--green);
+  text-shadow: 0.2rem 0.2rem 0.5rem #555;
 }
 /* Initially, HIDE THE TASK FORM  */
 
-.modal-header, label {
-  color:  var(--darkgreen);
+.modal-header,
+label {
+  color: var(--darkgreen);
   text-shadow: 1px 1px var(--green);
 }
 
@@ -96,8 +97,8 @@ h2 {
 }
 
 .btn {
-    margin-top: 2rem;
-    background-color: var(--notebook);
+  margin-top: 2rem;
+  background-color: var(--notebook);
 }
 
 .btn:hover {
@@ -110,8 +111,9 @@ h2 {
   color: var(--green);
 }
 
-.success textarea, 
-.success input {
+.success textarea,
+.success input,
+.success select {
   border-color: var(--green);
 }
 
@@ -122,16 +124,17 @@ h2 {
 
 /* Form input error symbol*/
 .error i.fa-exclamation-circle {
- visibility: visible; 
+  visibility: visible;
   color: var(--red);
 }
 
 .error textarea,
-.error input {
+.error input,
+.error select {
   border-color: var(--red);
 }
 
-.error small{
+.error small {
   visibility: visible;
   color: var(--red);
 }
@@ -143,7 +146,8 @@ ul {
   border-color: var(--green);
 }
 
-.edit , .delete {
+.edit,
+.delete {
   float: right;
   margin: 0 1rem 0 0;
   color: var(--darkgreen);
