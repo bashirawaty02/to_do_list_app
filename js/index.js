@@ -15,14 +15,10 @@ resetModal.addEventListener("click", () => {
     icons[i].parentElement.classList.remove("success");
     icons[i].parentElement.classList.remove("error");
   }
-  // refreshFormModal();
 });
-function refreshFormModal() {
-  newTaskForm.reload(true);
-}
-// $(".modal").on("hidden.bs.modal", function () {
-//   $(".new-task-modal").html("");
-// });
+$(".modal").on("hidden.bs.modal", function () {
+  $(this).find("form")[0].reset();
+});
 newTaskForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const newTaskNameInput = document.querySelector("#newTaskNameInput");
@@ -48,7 +44,6 @@ newTaskForm.addEventListener("submit", (event) => {
     status
   );
 });
-
 // validate the form
 const validFormFieldInput = (
   name,
@@ -123,7 +118,6 @@ const validFormFieldInput = (
     isStatusValid
   );
 };
-
 // format date
 const formatDate = (date) => {
   let month = date.getMonth() + 1;
