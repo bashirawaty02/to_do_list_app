@@ -3,7 +3,7 @@
 This repository contains the **_To Do List App_** application project code. This readme document contains the application design UI ideation to the implementation.
 
 <p align="center">
-<img src="./img/desk.jpg" alt="Desk photo" width="600" height = "350"/>
+<img src="./img/bg.jpg" alt="Desk photo" width="600" height = "350"/>
 </p>
 
 The application enables the user to add tasks, update and delete tasks.
@@ -12,8 +12,8 @@ Github Repo: [https://github.com/ktSuW/to_do_list_app]
 
 Contributor :
 
-- Jennifer Joang
-- Sujatha
+- Victoria 
+- David 
 - [Su](https://github.com/ktSuW)
 
 <hr>
