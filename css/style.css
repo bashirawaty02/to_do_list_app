@@ -39,7 +39,7 @@ h1 {
   text-shadow: 0.2rem 0.2rem 0.5rem #555;
 }
 
-h2 {
+h2, {
   margin-top: 3rem;
   font-size: 3rem;
   font-weight: 400;
@@ -160,4 +160,13 @@ ul {
 .delete.btn:hover {
   background-color: var(--red);
   color: white;
+}
+
+/* TASK 4: TIME DISPLAY  */
+.timeDisplay {
+  display: block;
+  text-align: right;
+  margin: 10px;
+  font-size: 20px;
+  color: var(--darkgreen);
 }
