@@ -2,6 +2,11 @@
 const newTaskForm = document.querySelector("#newTaskForm");
 // Reset modal and clear both error and success messages
 const resetModal = document.querySelector("#open-task-modal");
+const dateElement = document.querySelector("#currentDate");
+
+/************************************************************
+ * TASK 4 : 
+ ************************************************************/
 // event listener
 resetModal.addEventListener("click", () => {
   let messages = document.querySelectorAll(".validation-message");
@@ -16,9 +21,11 @@ resetModal.addEventListener("click", () => {
     icons[i].parentElement.classList.remove("error");
   }
 });
+
 $(".modal").on("hidden.bs.modal", function () {
   $(this).find("form")[0].reset();
 });
+
 newTaskForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const newTaskNameInput = document.querySelector("#newTaskNameInput");
@@ -158,3 +165,27 @@ function clearErrorMessage(element) {
   small.style.visibility = "hidden";
   element.parentElement.classList.remove("error");
 }
+
+/************************************************************
+ * Task 5: Adding Tasks
+ ************************************************************/
+// display Current date format 
+const formatCurrentDate = (date) => {
+  let month = date.getMonth() + 1;
+  if (month < 10) {
+    month = `0${month}`;
+  }
+  let day = date.getDate();
+  if (day < 10) {
+    day = `0${day}`;
+  }
+  let year = date.getFullYear();
+  return `${day}-${month}-${year}`;
+};
+
+const todayDate = formatCurrentDate(new Date());
+function displayCurrentDate(dateElement) {
+  dateElement.innerText = todayDate;
+}
+
+displayCurrentDate(dateElement);

@@ -82,6 +82,10 @@ The app features/specifications outline is as follows.
 
 ## Lessons Learned
 
+## Features to be fixed 
+
+1. fontawesome icons  do not display when error or success classes are added. 
+
 <hr>
 
 ## References
