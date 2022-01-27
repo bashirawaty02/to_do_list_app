@@ -4,7 +4,7 @@
   --yellow: #f4b400;
   --green: #CFD232;
   --darkgreen: #3C4504;
-  --notebook : #f5e6d6;
+  --notebook : #EEC8A1;
 }
 
 body {
@@ -12,7 +12,7 @@ body {
 }
 
 .bg-img {
-    background: url(../img/desk.jpg) center no-repeat;
+    background: url(../img/bg.jpg) center no-repeat;
     height: 30vh;
     background-size: cover;
     flex-direction: column;
