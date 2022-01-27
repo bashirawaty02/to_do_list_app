@@ -90,3 +90,40 @@ The app features/specifications outline is as follows.
 - Task instruction, https://github.com/workForClass/final-jwd7/tree/master/task-4%20Task%20Form%20Input%20Validation
 - <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 - Spring 1 Brief - Scorecard Rubric , [Generation Australia](https://github.com/generation-org/genxi-jwd-final-project)
+
+<hr>
+
+### Git and GitHub Collaboration guide
+
+- Go to main branch if you are on your branch and pull from remote repo 
+
+  ```
+  git checkout main
+
+  git pull origin main
+  ```
+
+  - You will see - Already up to date if your repo are in sync or see the changes
+- Go back to your branch and pull from local main repo
+
+  ```
+  git checkout your-branch
+  git pull 
+  ```
+- To receive the changes from main branch
+
+  ```
+  git branch --set-upstream-to=origin/main su
+  ```
+- Submit the changes
+
+  ```
+  git add .
+  git commit -m "write your comments"
+  git push origin main
+  ```
+
+- If you push your changes successfully, you will see **Compare & pull request** 
+  - You want to push it to main
+  - Pull Request - Complete the form
+  - Click **Create pull request**
