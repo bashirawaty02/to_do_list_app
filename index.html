@@ -37,12 +37,24 @@
         <h1 class="my-5">To Do List App</h1>
       </div>
 
-      <div class="timeDisplay">
-        <span id="currentDate"> </span>
+      <div class="container">
+        <div class="timeDisplay">
+          <span id="currentDate"> </span>
+        </div>
+        <div class="light-dark">
+          <input type="checkbox" class="checkbox" id="checkbox" />
+          <label for="checkbox" class="label" id="lightDark">
+            <span>
+              <i class="fas fa-moon fa-2x"></i>
+              <i class="fas fa-sun fa-2x"></i>
+              <div class="light-dark-toggle"></div>
+            </span>
+          </label>
+        </div>
       </div>
 
       <!-- BUTTON : Add task Modal pop up button : START -->
-      <div class="row mb-5">
+      <div class="container">
         <button
           id="open-task-modal"
           type="submit"

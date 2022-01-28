@@ -147,6 +147,9 @@ ul {
   border-color: var(--green);
 }
 
+li {
+  border-radius: 1rem;
+}
 .edit,
 .delete {
   float: right;
@@ -171,3 +174,79 @@ ul {
   font-size: 20px;
   color: var(--darkgreen);
 }
+
+
+/***************** Light and Dark theme *************/
+
+
+.light-dark , .timeDisplay {
+  display: inline-block;
+  margin-top: 2rem;
+  vertical-align: top;
+}
+ /* Position the light dark toggle bar to the right  */
+.light-dark  {
+  float: right;
+
+}
+/* hide checkbox  */
+.checkbox {
+  opacity: 0;
+}
+
+/* Adjacent selector + 
+Select toggle inside the label and change the position from left to right.
+*/
+.checkbox:checked + .label .light-dark-toggle{
+  transform: translateX(3rem);
+}
+
+/* Reference 
+https://stackoverflow.com/questions/19000124/how-to-add-different-styles-to-one-label-field-using-css
+ */
+label  span {
+  width: 3rem;
+  height: 2rem;
+  background-color: var(--darkgreen);
+  display: flex;
+  border-radius: 1rem;
+  width: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px;
+  position: relative;
+
+}
+
+.fa-moon{
+  color: darkorange;
+  padding: 0.2rem;
+ 
+}
+.fa-sun{
+  color: var(--red);
+  padding: 0.2rem;
+}
+.light-dark-toggle{
+  top: 2px;
+  left: 2px;
+  border-radius: 50%;
+  background-color: var(--green);
+  position: absolute;
+  height: 1.8rem;
+  width: 2rem;
+  /* this is added to make the transition smooth  */
+  transition: transform 0.15s linear;
+}
+
+/* DARK THEME */
+body.dark{
+  background-color: rgb(162, 157, 157);
+  color: black;
+  transition: background 0.2s linear;
+}
+/* label.dark {
+  background-color: black;
+} */
+
+

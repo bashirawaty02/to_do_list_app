@@ -1,8 +1,19 @@
 "use Strict";
 const taskManager = new TaskManager(0);
 
-taskManager.load();
-taskManager.render();
+// *****************************************************
+// Whenever the page loads, 
+// it will only load what is in the local storage
+// *****************************************************
+loadPage = ()=> {
+  taskManager.load();
+  taskManager.render();
+}
+
+window.onload = loadPage();
+
+// taskManager.load();
+// taskManager.render();
 
 const newTaskForm = document.querySelector("#newTaskForm");
 // Reset modal and clear both error and success messages
@@ -217,4 +228,13 @@ tasksList.addEventListener("click", (event) => {
     task.status = "done";
     taskManager.render();
   }
+});
+
+//=================================================
+// Light and Dark Theme 
+//=================================================
+const checkbox = document.querySelector("#checkbox");
+checkbox.addEventListener("change", () => {
+  //Change the theme of website
+  document.body.classList.toggle("dark");
 });

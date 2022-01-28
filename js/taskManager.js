@@ -41,7 +41,7 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
             data-target="#edit-task-modal">EDIT</button>
           <button class="btn btn-outline-danger delete-button">DELETE</button>
       </div>
-    </li>`;
+    </li> <br>`;
   return html;
 };
 
