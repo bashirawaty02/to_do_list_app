@@ -1,5 +1,9 @@
 "use Strict";
 const taskManager = new TaskManager(0);
+
+taskManager.load();
+taskManager.render();
+
 const newTaskForm = document.querySelector("#newTaskForm");
 // Reset modal and clear both error and success messages
 const resetModal = document.querySelector("#open-task-modal");
@@ -57,13 +61,14 @@ newTaskForm.addEventListener("submit", (event) => {
   );
   if (isValid) {
     taskManager.addTask(name, taskDescription, assignedTo, dueDate, status);
+    //Clear the text content within each tag
+    newTaskNameInput.value = "";
+    newTaskDescription.value = "";
+    newTaskAssignedTo.value = "";
+    newTaskDueDate.value = "";
+    validationStatus.value = "";
   }
-  //Clear the text content within each tag
-  newTaskNameInput.value = "";
-  newTaskDescription.value = "";
-  newTaskAssignedTo.value = "";
-  newTaskDueDate.value = "";
-  validationStatus.value = "";
+  taskManager.save();
   taskManager.render();
 });
 // validate the form
