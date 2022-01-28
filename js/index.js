@@ -41,6 +41,7 @@ newTaskForm.addEventListener("submit", (event) => {
   const assignedTo = newTaskAssignedTo.value.trim();
   const dueDate = newTaskDueDate.value.trim();
   const status = validationStatus.value.trim();
+  const taskHTML = createTaskHTML(name,taskDescription, assignedTo, dueDate, status)
   clearErrorMessage(newTaskNameInput);
   clearErrorMessage(newTaskDescription);
   clearErrorMessage(newTaskAssignedTo);
@@ -63,7 +64,7 @@ newTaskForm.addEventListener("submit", (event) => {
   newTaskAssignedTo.value = "";
   newTaskDueDate.value="";
   validationStatus.value="";
-  
+  taskManager.render();
 });
 // validate the form
 const validFormFieldInput = (
@@ -127,8 +128,6 @@ const validFormFieldInput = (
     setErrorFor(validationStatus, "Please select an option.");
   } else {
     setSuccessFor(validationStatus, "Correct input!");
-    console.log(status);
-    console.log(validationStatus);
     isStatusValid = true;
   }
   return (
