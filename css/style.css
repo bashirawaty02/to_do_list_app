@@ -39,7 +39,7 @@ h1 {
   text-shadow: 0.2rem 0.2rem 0.5rem #555;
 }
 
-h2, {
+h2 {
   margin-top: 3rem;
   font-size: 3rem;
   font-weight: 400;
@@ -98,6 +98,7 @@ label {
 
 .btn {
   margin-top: 2rem;
+  margin-left: 0.5rem;
   background-color: var(--notebook);
 }
 
