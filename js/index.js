@@ -1,11 +1,14 @@
 "use Strict";
+
+const taskManager = new TaskManager(0);
+
 const newTaskForm = document.querySelector("#newTaskForm");
 // Reset modal and clear both error and success messages
 const resetModal = document.querySelector("#open-task-modal");
 const dateElement = document.querySelector("#currentDate");
 
 /************************************************************
- * TASK 4 : 
+ * TASK 4 :
  ************************************************************/
 // event listener
 resetModal.addEventListener("click", () => {
@@ -50,6 +53,17 @@ newTaskForm.addEventListener("submit", (event) => {
     dueDate,
     status
   );
+
+  if (isValid) {
+    taskManager.addTask(name, taskDescription, assignedTo, dueDate, status);
+  }
+  //Clear the text content within each tag
+  newTaskNameInput.value = "";
+  newTaskDescription.value = "";
+  newTaskAssignedTo.value = "";
+  newTaskDueDate.value="";
+  validationStatus.value="";
+  
 });
 // validate the form
 const validFormFieldInput = (
@@ -169,7 +183,7 @@ function clearErrorMessage(element) {
 /************************************************************
  * Task 5: Adding Tasks
  ************************************************************/
-// display Current date format 
+// display Current date format
 const formatCurrentDate = (date) => {
   let month = date.getMonth() + 1;
   if (month < 10) {
