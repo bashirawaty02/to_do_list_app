@@ -1,12 +1,9 @@
 "use Strict";
-
 const taskManager = new TaskManager(0);
-
 const newTaskForm = document.querySelector("#newTaskForm");
 // Reset modal and clear both error and success messages
 const resetModal = document.querySelector("#open-task-modal");
 const dateElement = document.querySelector("#currentDate");
-
 /************************************************************
  * TASK 4 :
  ************************************************************/
@@ -24,11 +21,9 @@ resetModal.addEventListener("click", () => {
     icons[i].parentElement.classList.remove("error");
   }
 });
-
 $(".modal").on("hidden.bs.modal", function () {
   $(this).find("form")[0].reset();
 });
-
 newTaskForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const newTaskNameInput = document.querySelector("#newTaskNameInput");
@@ -41,7 +36,13 @@ newTaskForm.addEventListener("submit", (event) => {
   const assignedTo = newTaskAssignedTo.value.trim();
   const dueDate = newTaskDueDate.value.trim();
   const status = validationStatus.value.trim();
-  const taskHTML = createTaskHTML(name,taskDescription, assignedTo, dueDate, status)
+  // const taskHTML = createTaskHTML(
+  //   name,
+  //   taskDescription,
+  //   assignedTo,
+  //   dueDate,
+  //   status
+  // );
   clearErrorMessage(newTaskNameInput);
   clearErrorMessage(newTaskDescription);
   clearErrorMessage(newTaskAssignedTo);
@@ -54,7 +55,6 @@ newTaskForm.addEventListener("submit", (event) => {
     dueDate,
     status
   );
-
   if (isValid) {
     taskManager.addTask(name, taskDescription, assignedTo, dueDate, status);
   }
@@ -62,8 +62,8 @@ newTaskForm.addEventListener("submit", (event) => {
   newTaskNameInput.value = "";
   newTaskDescription.value = "";
   newTaskAssignedTo.value = "";
-  newTaskDueDate.value="";
-  validationStatus.value="";
+  newTaskDueDate.value = "";
+  validationStatus.value = "";
   taskManager.render();
 });
 // validate the form
@@ -178,7 +178,6 @@ function clearErrorMessage(element) {
   small.style.visibility = "hidden";
   element.parentElement.classList.remove("error");
 }
-
 /************************************************************
  * Task 5: Adding Tasks
  ************************************************************/
@@ -195,10 +194,22 @@ const formatCurrentDate = (date) => {
   let year = date.getFullYear();
   return `${day}-${month}-${year}`;
 };
-
 const todayDate = formatCurrentDate(new Date());
 function displayCurrentDate(dateElement) {
   dateElement.innerText = todayDate;
 }
-
 displayCurrentDate(dateElement);
+//===============================================================
+// Sprint - 3 - Task 8 - Update A Task
+//===============================================================
+const tasksList = document.querySelector("#tasksList");
+tasksList.addEventListener("click", (event) => {
+  if (event.target.classList.contains("done-button")) {
+    // select the li
+    const parentTask = event.target.parentElement.parentElement;
+    const taskId = Number(parentTask.dataset.taskId);
+    let task = taskManager.getTaskById(taskId);
+    task.status = "done";
+    taskManager.render();
+  }
+});
