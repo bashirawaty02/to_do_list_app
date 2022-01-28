@@ -7,14 +7,12 @@ const formatStatus = (status) => {
     case "inProgress":
       status = "IN PROGRESS";
       break;
-    case "pending":
-      status = "PENDING REVIEW";
-      break;
     default:
       status = status.toUpperCase();
   }
   return status;
 };
+
 const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
   formattedStatus = formatStatus(status);
   const html = `
@@ -46,6 +44,7 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
     </li>`;
   return html;
 };
+
 class TaskManager {
   constructor(currentId = 0) {
     this.tasks = [];
@@ -92,5 +91,24 @@ class TaskManager {
       }
     }
     return foundTask;
+  }
+
+  //Task 9: Persisting Tasks to LocalStorage
+  save() {
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem("tasks", tasksJson);
+    const currentId = new String(this.currentId);
+    localStorage.setItem("currentId", currentId);
+  }
+
+  load() {
+    if (localStorage.getItem("tasks")) {
+      const tasksJson = localStorage.getItem("tasks");
+      this.tasks = JSON.parse(tasksJson);
+    }
+    if (localStorage.getItem("currentId")) {
+      const currentId = localStorage.getItem("currentId");
+      this.currentId = parseInt(currentId);
+    }
   }
 }
