@@ -1,4 +1,5 @@
 "use Strict";
+
 const formatStatus = (status) => {
   switch (status) {
     case "toDo":
