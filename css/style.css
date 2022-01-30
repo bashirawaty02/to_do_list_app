@@ -175,19 +175,17 @@ li {
   color: var(--darkgreen);
 }
 
-
 /***************** Light and Dark theme *************/
 
-
-.light-dark , .timeDisplay {
+.light-dark,
+.timeDisplay {
   display: inline-block;
   margin-top: 2rem;
   vertical-align: top;
 }
- /* Position the light dark toggle bar to the right  */
-.light-dark  {
+/* Position the light dark toggle bar to the right  */
+.light-dark {
   float: right;
-
 }
 /* hide checkbox  */
 .checkbox {
@@ -197,14 +195,14 @@ li {
 /* Adjacent selector + 
 Select toggle inside the label and change the position from left to right.
 */
-.checkbox:checked + .label .light-dark-toggle{
+.checkbox:checked + .label .light-dark-toggle {
   transform: translateX(3rem);
 }
 
 /* Reference 
 https://stackoverflow.com/questions/19000124/how-to-add-different-styles-to-one-label-field-using-css
  */
-label  span {
+label span {
   width: 3rem;
   height: 2rem;
   background-color: var(--darkgreen);
@@ -215,19 +213,17 @@ label  span {
   justify-content: space-between;
   padding: 6px;
   position: relative;
-
 }
 
-.fa-moon{
+.fa-moon {
   color: darkorange;
   padding: 0.2rem;
- 
 }
-.fa-sun{
+.fa-sun {
   color: var(--red);
   padding: 0.2rem;
 }
-.light-dark-toggle{
+.light-dark-toggle {
   top: 2px;
   left: 2px;
   border-radius: 50%;
@@ -240,7 +236,7 @@ label  span {
 }
 
 /* DARK THEME */
-body.dark{
+body.dark {
   background-color: rgb(162, 157, 157);
   color: black;
   transition: background 0.2s linear;
@@ -249,4 +245,74 @@ body.dark{
   background-color: black;
 } */
 
+/************************************************/
+/*               Drag and Drop Feature          */
+/************************************************/
+.bg {
+  background-image: url("");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.drag-drop-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  margin-bottom: 1rem;
+}
 
+
+
+h3 {
+  margin: 1rem 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
+  width: auto;
+  background: linear-gradient(
+    rgba(227, 231, 173, 0.2),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-bottom: 0.01rem solid var(--darkgreen);
+  letter-spacing: 0.1rem;
+}
+
+h5 {
+  margin: 0.5rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--darkgreen);
+}
+
+.to-do-col,
+.in-progress-col,
+.done-col {
+  border: var(--green);
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: var(--green) 1px solid;
+}
+
+.list-group {
+  cursor: pointer;
+}
+
+
+/* Hold and dragging the task item  */
+.hold {
+  border: solid rgba(255, 255, 255, 0.3) 4px;
+  border: var(--green) 1px solid;
+}
+
+.hovered {
+  background: rgb(238, 238, 234);
+  border-style: dashed;
+  border: var(--green) 1px solid;
+}
+
+
+.hidden {
+  
+}

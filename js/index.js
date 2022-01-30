@@ -2,13 +2,13 @@
 const taskManager = new TaskManager(0);
 
 // *****************************************************
-// Whenever the page loads, 
+// Whenever the page loads,
 // it will only load what is in the local storage
 // *****************************************************
-loadPage = ()=> {
+loadPage = () => {
   taskManager.load();
   taskManager.render();
-}
+};
 
 window.onload = loadPage();
 
@@ -208,7 +208,7 @@ const formatCurrentDate = (date) => {
     day = `0${day}`;
   }
   let year = date.getFullYear();
-  return `${day}-${month}-${year}`;
+  return `${day}/${month}/${year}`;
 };
 const todayDate = formatCurrentDate(new Date());
 function displayCurrentDate(dateElement) {
@@ -231,10 +231,98 @@ tasksList.addEventListener("click", (event) => {
 });
 
 //=================================================
-// Light and Dark Theme 
+// Light and Dark Theme
 //=================================================
 const checkbox = document.querySelector("#checkbox");
 checkbox.addEventListener("change", () => {
   //Change the theme of website
   document.body.classList.toggle("dark");
 });
+
+//=================================================
+// Drag and Drop Feature - Method - 1
+//=================================================
+
+// Drop targets are all three cols and have 4 events attached to each of the col
+// const todos = document.querySelectorAll(".list-group");
+const todos = document.querySelectorAll(".list-group-item");
+const dropBoxes = document.querySelectorAll(".drop-box");
+let draggableToDo = null;
+
+todos.forEach((todo) => {
+  todo.addEventListener("dragstart", dragStart);
+  // todo.addEventListener("dragend", dragEnd);
+});
+
+for (const dropBox of dropBoxes) {
+  // dropBox.addEventListener("dragenter", dragEnter);
+  dropBox.addEventListener("dragover", dragOver);
+  // dropBox.addEventListener("dragleave", dragLeave);
+  dropBox.addEventListener("drop", dragDrop);
+}
+
+function dragStart() {
+  draggableToDo = this; // this points to the element the event occurs
+  // console.log('dragStart....')
+}
+
+function dragEnd() {
+  // console.log("dragEnd....");
+}
+
+function dragOver(e) {
+  // default behaviour does not allow tha dropped target area to grab the draggable elements. Therefore, you need to prevent this behaviour
+  e.preventDefault();
+  // console.log('drg over');
+}
+function dragEnter(e) {
+  this.style.border = "3px #F4B400 dotted";
+  // console.log('drg enter');
+}
+function dragLeave(e) {
+  this.style.border = 'var(--green) 1px solid';
+  // console.log('drg leave');
+}
+function dragDrop(e) {
+  this.style.border = "var(--green) 1px solid";
+  this.appendChild(draggableToDo);
+  // console.log('drg drop');
+}
+
+//=================================================
+// Drag and Drop Feature - Method - 4
+//=================================================
+// const todos = document.querySelectorAll(".list-group-item");
+// const dropBoxes = document.querySelectorAll(".drop-box");
+
+
+// todos.forEach((todo) => {
+//   // required event listeners
+//   todo.addEventListener("dragstart", dragStart);
+//   todo.addEventListener("drop", dragDrop);
+//   todo.addEventListener("dragover", dragOver);
+// });
+
+
+// function dragStart(event){
+//   let todoList = event.target;
+//   if(!todoList.closest('.list-group-item')) return;
+//   if(todoList.classList.contains('.list-group-item')){
+//     todoList = todoList.todoList.firstElementChild;
+//   }
+//   event.dataTransfer.setData('text/plain', 'some data');
+// }
+
+// function dragDrop(event){
+//   let dropzone = event.target;
+//   if(!dropzone.classList.contains('dropBoxes')) return;
+
+//   event.preventDefault();
+//   let data = event.dataTransfer.getData('text/plain');
+//   dropzone.textContent += data;
+//   dropzone.classList.remove('over');
+// }
+
+// function dragOver(event){
+
+// }

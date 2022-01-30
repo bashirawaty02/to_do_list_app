@@ -17,7 +17,7 @@ const formatStatus = (status) => {
 const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
   formattedStatus = formatStatus(status);
   const html = `
-    <li data-task-id=${id} class="list-group-item">
+    <li data-task-id=${id} class="list-group-item" draggable="true">
       <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
           <h5>${name}</h5>
           <span class="badge ${
@@ -42,7 +42,7 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
             data-target="#edit-task-modal">EDIT</button>
           <button class="btn btn-outline-danger delete-button">DELETE</button>
       </div>
-    </li> <br>`;
+    </li><br>`;
   return html;
 };
 
