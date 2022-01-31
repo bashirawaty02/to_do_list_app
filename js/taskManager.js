@@ -23,7 +23,7 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
       <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
           <h5>${name}</h5>
           <span class="badge ${
-            status === "toDo" ? "badge-danger" : "badge-success"
+            status === "toDo" ? "badge-danger" : status === "inProgress" ? "badge-warning" : "badge-success"
           }" >${formattedStatus}</span>
       </div>
       <div class="d-flex w-100 mb-3 justify-content-between">
@@ -32,11 +32,11 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
       </div>
       <p>${description}</p>
       <div class="d-flex w-100 justify-content-end">
-          <button class="btn btn-outline-success done-button ${
+          <button class="btn done-button ${
             status != "done" ? "visible" : "invisible"
-          }">Done
+          }">DONE
           </button>
-          <button class="btn btn-outline-success edit-button"          
+          <button class="btn edit-button"          
             id="edit-task-modal"
             type="submit"
             class="btn btn-block"
@@ -190,7 +190,7 @@ class TaskManager {
   //==========================================
   editTask(taskId, name, description, assignedTo, dueDate, status){
     const editedTaskObject = {
-      id : task,
+      id : taskId,
       name,
       description,
       assignedTo,
