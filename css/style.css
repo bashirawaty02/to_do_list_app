@@ -98,12 +98,42 @@ label {
 
 .btn {
   margin-top: 2rem;
-  margin-left: 0.5rem;
   background-color: var(--notebook);
 }
 
 .btn:hover {
   background-color: var(--green);
+}
+
+.list-group .btn{
+  margin-left: 0.5rem;
+}
+
+.list-group .done-button{
+  color: #28a745;
+  border-style: solid;
+  border-color: #28a745;
+}
+
+.list-group .edit-button{
+  color: #4285f4;
+  border-style: solid;
+  border-color: var(--blue);
+}
+
+.list-group .delete-button:hover{
+  background-color: var(--red)
+}
+
+.list-group .edit-button:hover{
+  background-color: var(--blue);
+  color: white;
+  border-color: var(--blue)
+}
+
+.list-group .done-button:hover{
+  background-color: #28a745;
+  color: white;
 }
 
 /* Form input success symbol*/
@@ -143,7 +173,7 @@ label {
 /** Tasks List format */
 ul {
   margin: 2rem;
-  padding: 0 2rem 0 0;
+  /* padding: 0 2rem 0 0; */
   border-color: var(--green);
 }
 
@@ -155,15 +185,6 @@ li {
   float: right;
   margin: 0 1rem 0 0;
   color: var(--darkgreen);
-}
-
-.edit.btn:hover {
-  color: var(--darkgreen);
-}
-
-.delete.btn:hover {
-  background-color: var(--red);
-  color: white;
 }
 
 /* TASK 4: TIME DISPLAY  */
@@ -204,40 +225,40 @@ https://stackoverflow.com/questions/19000124/how-to-add-different-styles-to-one-
  */
 label span {
   width: 3rem;
-  height: 2rem;
-  background-color: var(--darkgreen);
+  height: 2.3rem;
+  background-color: rgb(66, 66, 66);
   display: flex;
   border-radius: 1rem;
-  width: 5rem;
+  width: 5.5rem;
   align-items: center;
   justify-content: space-between;
-  padding: 6px;
+  padding: 5px;
   position: relative;
 }
 
 .fa-moon {
-  color: darkorange;
-  padding: 0.2rem;
+  color: #f5f5f5;
 }
 .fa-sun {
-  color: var(--red);
-  padding: 0.2rem;
+  color: #ffbb00;
 }
 .light-dark-toggle {
   top: 2px;
   left: 2px;
   border-radius: 50%;
-  background-color: var(--green);
+  background-color: rgb(165, 165, 165);
   position: absolute;
-  height: 1.8rem;
-  width: 2rem;
+  height: 2.1rem;
+  width: 2.3rem;
   /* this is added to make the transition smooth  */
   transition: transform 0.15s linear;
 }
 
-/* DARK THEME */
+/************************************************/
+/*                  Dark Theme                  */
+/************************************************/
 body.dark {
-  background-color: rgb(162, 157, 157);
+  background-color: #24252a;
   color: black;
   transition: background 0.2s linear;
 }
@@ -245,6 +266,140 @@ body.dark {
   background-color: black;
 } */
 
+.dark h1{
+  color: #ff6961;
+  text-shadow: 2px 2px #5d2522;
+}
+
+.dark h2{
+  color:whitesmoke;
+  text-shadow: 2px 2px rgb(109, 109, 109);
+  border-bottom: .3rem solid #ff6961;
+}
+
+.dark h3{
+  color: whitesmoke;
+  text-shadow: 2px 2px rgb(109, 109, 109);
+}
+
+.dark .timeDisplay{
+  color:whitesmoke;
+  text-shadow: 2px 2px rgb(109, 109, 109);
+}
+
+.dark #open-task-modal{
+  background-color: #ff6961;
+  text-shadow: 2px 2px rgb(109, 109, 109);
+  color:whitesmoke;
+}
+
+.dark .bg-img{
+  border:3px solid #ff6961;
+}
+
+.dark .list-group-item{
+  background-color: #4c4d53;
+  border: 1px solid #ff6961;
+  color:rgb(209, 209, 209); 
+}
+.dark .list-group-item h5{
+  color:whitesmoke;
+}
+
+.dark .to-do-col{
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: #ff6961 1px solid !important;
+}
+
+.dark .in-progress-col{
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: #ff6961 1px solid !important;
+}
+
+.dark .done-col{
+  margin: 1rem;
+  border-radius: 0.5rem;
+  border: #ff6961 1px solid !important; 
+}
+
+.dark .hold {
+  border: solid rgba(255, 255, 255, 0.3) 4px;
+  border: #ff6961 1px solid;
+}
+
+.dark .hovered {
+  background: rgb(238, 238, 234);
+  border-style: dashed;
+  border: #ff6961 1px solid;
+}
+
+.dark .edit-button{
+  background-color: #4285f4;
+  color: #fff;
+}
+.dark .edit-button:hover{
+  background-color: #005ff8;
+  border-color: #005ff8;
+  color: #fff;
+}
+
+.dark .delete-button{
+  background-color: #ff6961;
+  border-color: #ff6961;
+  color: #fff;
+}
+.dark .delete-button:hover{
+  background-color: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+.dark .list-group .done-button{
+  background-color: #28a745;
+  border-style: solid;
+  border-color: #28a745;
+  color: #fff;
+}
+
+.dark .list-group .done-button:hover{
+  background-color: #1c8033;
+  border-style: solid;
+  border-color: #1c8033;
+  color: #fff;
+}
+
+.dark .drag-drop-container > div{
+max-width: 100%;
+}
+
+.dark .modal-content{
+  background-color: #24252a;
+  
+}
+
+.dark .modal-header, .dark label {
+  color:whitesmoke;
+  text-shadow:none;
+}
+
+.dark .modal-title {
+  color:whitesmoke;
+  text-shadow:none;
+  background: none;
+  border-bottom: none;
+}
+
+.dark .btn-block{
+  background-color: #ff6961;
+  text-shadow: rgb(109 109 109) 2px 2px;
+  color:whitesmoke;
+}
+
+.dark .close{
+  color:white;
+}
 /************************************************/
 /*               Drag and Drop Feature          */
 /************************************************/
@@ -262,8 +417,6 @@ body.dark {
   margin-bottom: 1rem;
 }
 
-
-
 h3 {
   margin: 1rem 0.5rem;
   font-size: 1.6rem;
@@ -279,7 +432,7 @@ h3 {
 }
 
 h5 {
-  margin: 0.5rem 0.5rem;
+  margin-top: 0.5rem;
   font-size: 1rem;
   font-weight: 600;
   text-align: center;
@@ -289,7 +442,6 @@ h5 {
 .to-do-col,
 .in-progress-col,
 .done-col {
-  border: var(--green);
   margin: 1rem;
   border-radius: 0.5rem;
   border: var(--green) 1px solid;
@@ -312,7 +464,25 @@ h5 {
   border: var(--green) 1px solid;
 }
 
+/************************************************/
+/*                Responsiveness                */
+/************************************************/
+@media screen and (max-width: 600px) {
+  .row {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    align-items: center;
+  }
 
-.hidden {
-  
+  .col{
+    margin-left:15px;
+  }
+
+  .drag-drop-container {
+    margin-left: 5px;
+    padding: 15px;
+  }
+
+
 }

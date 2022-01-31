@@ -119,7 +119,7 @@ const validFormFieldInput = (
     setErrorFor(editTaskNameInput, "Must be greater than 5.");
   } else {
     setSuccessFor(newTaskNameInput, "Correct input!");
-    setErrorFor(editTaskNameInput, "Correct input!");
+    setSuccessFor(editTaskNameInput, "Correct input!");
     isNameValid = true;
   }
   // for task description
@@ -240,41 +240,44 @@ displayCurrentDate(dateElement);
 //===============================================================
 // Sprint - 3 - Task 8 - Update A Task
 //===============================================================
-const tasksList = document.querySelector("#todo");
-tasksList.addEventListener("click", (event) => {
-  if (event.target.classList.contains("done-button")) {
-    // select the li
-    const parentTask = event.target.parentElement.parentElement;
-    const taskId = Number(parentTask.dataset.taskId);
-    let task = taskManager.getTaskById(taskId);
-    task.status = "done";
-    taskManager.save();
-    taskManager.render();
-  }
-
-  //======================================
-  // Sprint - 3 :  Task 10: Deleting Tasks
-  //======================================
-  if (event.target.classList.contains("delete-button")) {
-    const parentTask = event.target.parentElement.parentElement;
-    const taskId = Number(parentTask.dataset.taskId);
-    taskManager.deleteTask(taskId);
-    taskManager.save();
-    taskManager.render();
-  }
-
-  //======================================
-  // Sprint - 3 :  Additional Feature - Edit button
-  //======================================
-  if (event.target.classList.contains("edit-button")) {
-    const parentTask = event.target.parentElement.parentElement;
-    const taskId = Number(parentTask.dataset.taskId);
-    const index = taskManager.tasks.findIndex((item) => {
-      item.id === taskId;
-    });
-
-    editTask = taskManager.tasks[index];
-  }
+const tasksList = document.querySelectorAll("#todo, #inprogress, #done");
+tasksList.forEach(element =>{
+  element.addEventListener("click", (event) => {
+    if (event.target.classList.contains("done-button")) {
+      // select the li
+      const parentTask = event.target.parentElement.parentElement;
+      const taskId = Number(parentTask.dataset.taskId);
+      let task = taskManager.getTaskById(taskId);
+      task.status = "done";
+      taskManager.save();
+      taskManager.render();
+    }
+  
+    //======================================
+    // Sprint - 3 :  Task 10: Deleting Tasks
+    //======================================
+    if (event.target.classList.contains("delete-button")) {
+      const parentTask = event.target.parentElement.parentElement;
+      const taskId = Number(parentTask.dataset.taskId);
+      taskManager.deleteTask(taskId);
+      taskManager.save();
+      taskManager.render();
+    }
+  
+    //======================================
+    // Sprint - 3 :  Additional Feature - Edit button
+    //======================================
+    if (event.target.classList.contains("edit-button")) {
+      const parentTask = event.target.parentElement.parentElement;
+      const taskId = Number(parentTask.dataset.taskId);
+      const index = taskManager.tasks.findIndex((item) => {
+        if (item.id === taskId) return taskId;
+      });
+  
+      editTask = taskManager.tasks[index];
+      preloadModal();
+    }
+  });
 });
 
 //=================================================
@@ -360,11 +363,11 @@ if(editTaskForm){
   editTaskForm.addEventListener("submit", (event) => {
     event.preventDefault();
     //Select inputs
-    const editTaskNameInput = document.querySelector("editTaskNameInput");
+    const editTaskNameInput = document.querySelector("#editTaskNameInput");
     const editTaskDescription = document.querySelector("#editTaskDescription");
     const editTaskAssignedTo = document.querySelector("#editTaskAssignedTo");
     const editTaskDueDate = document.querySelector("#editTaskDueDate");
-    const editValidationStatus = document.querySelector("validationStatus");
+    const editValidationStatus = document.querySelector("#editValidationStatus");
 
     // Get all inputs values and remove white spaces with trim()
     const name = editTaskNameInput.value.trim();
@@ -390,10 +393,10 @@ if(editTaskForm){
       taskManager.editTask(
         editTask.id,
         name,
-        taskDescription,
+        description,
         assignedTo,
         dueDate,
-        editTask.status
+        status
       );
       //Clear the text content within each tag
       newTaskNameInput.value = "";
@@ -407,3 +410,16 @@ if(editTaskForm){
   });
 }
 
+function preloadModal() {
+  document.querySelector("#editTaskNameInput").value = editTask.name;
+  document.querySelector("#editTaskAssignedTo").value = editTask.assignedTo;
+  document.querySelector("#editTaskDueDate").value = editTask.dueDate;
+  document.querySelector("#editValidationStatus").value = editTask.status;
+  document.querySelector("#editTaskDescription").value = editTask.description;
+
+  clearErrorMessage(editTaskNameInput);
+  clearErrorMessage(editTaskDescription);
+  clearErrorMessage(editTaskAssignedTo);
+  clearErrorMessage(editTaskDueDate);
+  clearErrorMessage(editValidationStatus);
+}
