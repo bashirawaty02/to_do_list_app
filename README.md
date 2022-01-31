@@ -60,13 +60,65 @@ The app features/specifications outline is as follows.
 
 <hr>
 
-## 3. Agile Project Management - Trello
+## 3. Object Oriented Design for To Do List App
+
+The To Do list is the application which users can use to list/manage the tasks/todo lists.
+
+```
+Contents
+    System Requirements
+    Use Case Diagram
+    Class Diagram
+    Activity Diagram
+```
+
+### 3.1 System Requirements
+
+The followings are the set of requirements while designing the to do list.
+
+- Users should be able to add, delete, edit task items
+- Each task will have name, description, assignedTo, dueDate and status fields
+- The app will have light and dark mode enabling the users to select the theme
+
+### 3.2 Use Case Diagram
+
+<img src="./img/oop_userCaseDiagram.png" alt="use case diagram" width="600" height = "350"/>
+
+**_There are two main actors in the system:_**
+
+- **Users** : Users can add, modify, delete tasks in the app
+- **UI Display** : To display items appropriately in the corresponding columns reflecting the changes
+- **Local Storage** : Store the added and edited tasks
+
+**_Top user cases of the To do app_**
+
+- Add task items
+- Edit task items
+- Delete task items
+- Mark as done
+- Drag and drop items among To Do, In Progress and Done columns
+
+### 3.3 Class Diagram
+
+Below diagram illustrates the class diagram for this project.
+
+<img src="./img/oop_ClassDiagram.png" alt="use case diagram" width="500" height = "300"/>
+
+The followings are the main classes of To Do Application:
+- Task Manager : the building block of the App. 
+  - This class will be responsible for the features such as add, edit, delete and mark as done.
+  - This class encapsulate tasks array list and currentId of the task.
+### 3.4 Activity Diagram
+
+<hr>
+
+## 4. Agile Project Management - Trello
 
 ### Spring 1
 
 **Project Kickoff : 20 December 2021** - The following Trello Board demonstrated the sprint tasks planning status and tasks breakdown.
 
-![Project Kickoff Trello Status](./img/project_kickoff_trello.JPG)
+<img src="./img/project_kickoff_trello.JPG" alt="Desk photo" width="900" height = "350"/>
 
 ### Spring 2
 
@@ -82,9 +134,9 @@ The app features/specifications outline is as follows.
 
 ## Lessons Learned
 
-## Features to be fixed 
+## Features to be fixed
 
-1. fontawesome icons  do not display when error or success classes are added. 
+1. fontawesome icons do not display when error or success classes are added.
 
 ## Drag and Drop Feature Added
 
@@ -107,7 +159,7 @@ The app features/specifications outline is as follows.
 
 ### Git and GitHub Collaboration guide
 
-- Go to main branch if you are on your branch and pull from remote repo 
+- Go to main branch if you are on your branch and pull from remote repo
 
   ```
   git checkout main
@@ -116,17 +168,20 @@ The app features/specifications outline is as follows.
   ```
 
   - You will see - Already up to date if your repo are in sync or see the changes
+
 - Go back to your branch and pull from local main repo
 
   ```
   git checkout your-branch
-  git pull 
+  git pull
   ```
+
 - To receive the changes from main branch
 
   ```
   git branch --set-upstream-to=origin/main su
   ```
+
 - Submit the changes
 
   ```
@@ -135,7 +190,7 @@ The app features/specifications outline is as follows.
   git push origin main
   ```
 
-- If you push your changes successfully, you will see **Compare & pull request** 
+- If you push your changes successfully, you will see **Compare & pull request**
   - You want to push it to main
   - Pull Request - Complete the form
   - Click **Create pull request**
