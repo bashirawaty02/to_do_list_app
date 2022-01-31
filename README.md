@@ -86,6 +86,11 @@ The app features/specifications outline is as follows.
 
 1. fontawesome icons  do not display when error or success classes are added. 
 
+## Drag and Drop Feature Added
+
+1. To make the tasks draggable, add draggable="true" to li in TaskManager class
+
+
 <hr>
 
 ## References

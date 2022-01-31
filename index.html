@@ -31,7 +31,7 @@
   </head>
   <body>
     <!-- TASK LIST HEADING  -->
-    <div class="container">
+    <div class="container bg">
       <!-- Heading -->
       <div class="heading bg-img">
         <h1 class="my-5">To Do List App</h1>
@@ -147,7 +147,7 @@
                           <option selected disabled value="">Select...</option>
                           <option value="toDo">To do</option>
                           <option value="inProgress">In progress</option>
-                          <option value="complete">Complete</option>
+                          <option value="done">Done</option>
                         </select>
                         <br />
                         <i class="fas fa-check-circle"></i>
@@ -168,11 +168,124 @@
 
       <!-- MODAL | TASK FORM : END  -->
 
+      <!-- Sprint-3 Stretch Goal : Edit Modal Popup - Start -->
+      <div
+        class="modal fade"
+        id="edit-task-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="edit-task-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="row mb-5">
+              <div class="col">
+                <div class="modal-header">
+                  <h3 class="modal-title">Edit Task</h3>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form id="editTaskForm">
+                    <div class="form-group">
+                      <label for="editTaskNameInput">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="editTaskNameInput"
+                      />
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i>
+                      <small class="validation-message">Error message</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="editTaskDescription">Description</label>
+                      <textarea
+                        type="text"
+                        class="form-control"
+                        id="editTaskDescription"
+                      ></textarea>
+                      <i class="fas fa-check-circle"></i>
+                      <i class="fas fa-exclamation-circle"></i>
+                      <small class="validation-message">Error message</small>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col">
+                        <label for="editTaskAssignedTo">Assigned To</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="editTaskAssignedTo"
+                        />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="validation-message">Error message</small>
+                      </div>
+                      <div class="form-group col">
+                        <label for="editTaskDueDate">Due Date</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="editTaskDueDate"
+                        />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="validation-message">Error message</small>
+                      </div>
+                      <div class="form-group col">
+                        <label for="validationStatus">Status</label>
+                        <select
+                          class="custom-select form-control"
+                          id="editValidationStatus"
+                        >
+                          <option selected disabled value="">Select...</option>
+                          <option value="toDo">To do</option>
+                          <option value="inProgress">In progress</option>
+                          <option value="done">Done</option>
+                        </select>
+                        <br />
+                        <i class="fas fa-check-circle"></i>
+                        <i class="fas fa-exclamation-circle"></i>
+                        <small class="validation-message">Error message</small>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-block">
+                      Update Task
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sprint-3 Stretch Goal : Edit Modal Popup - End -->
+
       <!-- DISPLAY ADDED TASK ITEMS : START -->
       <div class="row">
         <div class="col">
           <h2>Tasks</h2>
-          <ul class="list-group" id="tasksList"></ul>
+          <div class="drag-drop-container row">
+            <div class="drop-box to-do-col">
+              <h3>To Do</h3>
+              <ul class="list-group" id="todo"></ul>
+            </div>
+            <div class="drop-box in-progress-col">
+              <h3>In Progress</h3>
+              <ul class="list-group" id="inprogress"></ul>
+            </div>
+            <div class="drop-box done-col">
+              <h3>Done</h3>
+              <ul class="list-group" id="done"></ul>
+            </div>
+          </div>
         </div>
         <!-- <div class="col"></div> -->
       </div>

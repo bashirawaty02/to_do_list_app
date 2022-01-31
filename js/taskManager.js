@@ -1,4 +1,5 @@
 "use Strict";
+
 const formatStatus = (status) => {
   switch (status) {
     case "toDo":
@@ -7,6 +8,8 @@ const formatStatus = (status) => {
     case "inProgress":
       status = "IN PROGRESS";
       break;
+    // case "done":
+    //   status = "DONE";
     default:
       status = status.toUpperCase();
   }
@@ -16,7 +19,7 @@ const formatStatus = (status) => {
 const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
   formattedStatus = formatStatus(status);
   const html = `
-    <li data-task-id=${id} class="list-group-item">
+    <li data-task-id=${id} class="list-group-item"  ondragstart="dragStart(event)"  draggable="true" id="${id}">
       <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
           <h5>${name}</h5>
           <span class="badge ${
@@ -41,7 +44,7 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
             data-target="#edit-task-modal">EDIT</button>
           <button class="btn btn-outline-danger delete-button">DELETE</button>
       </div>
-    </li> <br>`;
+    </li><br>`;
   return html;
 };
 
@@ -63,9 +66,12 @@ class TaskManager {
     this.tasks.push(task);
   }
   render() {
-    const taskHtmlList = [];
+    const taskHtmlListToDo = [];
+    const taskHtmlListInProgress = [];
+    const taskHtmlListDone = [];
+    let task;
     for (let i = 0; i < this.tasks.length; i++) {
-      const task = this.tasks[i];
+      task = this.tasks[i];
       const date = new Date(task.dueDate);
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
@@ -77,10 +83,31 @@ class TaskManager {
         formattedDate,
         task.status
       );
-      taskHtmlList.push(taskHTML);
+      if (task.status === "toDo") {
+        taskHtmlListToDo.push(taskHTML);
+      } else if (task.status === "inProgress") {
+        taskHtmlListInProgress.push(taskHTML);
+      } else {
+        taskHtmlListDone.push(taskHTML);
+      }
+
+      // taskHtmlList.push(taskHTML);
     }
-    const tasksHtml = taskHtmlList.join("\n");
-    document.querySelector("#tasksList").innerHTML = tasksHtml;
+    const tasksHtmlToDo = taskHtmlListToDo.join("\n");
+    document.querySelector("#todo").innerHTML = taskHtmlListToDo;
+    const tasksHtmlInProgress = taskHtmlListInProgress.join("\n");
+    document.querySelector("#inprogress").innerHTML = taskHtmlListInProgress;
+    const tasksHtmlDone = taskHtmlListDone.join("\n");
+    document.querySelector("#done").innerHTML = taskHtmlListDone;
+
+    // console.log(task.status);
+    // if (task.status === "toDo") {
+    //   document.querySelector("#todo").innerHTML = tasksHtml;
+    // } else if (task.status === "inProgress") {
+    //   document.querySelector("#inprogress").innerHTML = tasksHtml;
+    // } else {
+    //   document.querySelector("#done").innerHTML = tasksHtml;
+    // }
   }
   // create method to retrieve task by ID
   getTaskById(taskId) {
@@ -110,5 +137,68 @@ class TaskManager {
       const currentId = localStorage.getItem("currentId");
       this.currentId = parseInt(currentId);
     }
+  }
+
+  //==========================================
+  //        Task 10: Deleting Tasks
+  //==========================================
+  deleteTask(taskId) {
+    const newTasks = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (task.id !== taskId) {
+        newTasks.push(task);
+      }
+    }
+    this.tasks = newTasks;
+  }
+
+  //Question : The task must be in the To Do column, Otherwise, the event does not fire.Check..........
+  deleteTaskToDo(taskId) {
+    const newTasksToDo = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (task.id != taskId && task.status == "toDo") {
+        newTasksToDo.push(task);
+      }
+    }
+    this.tasks = newTasksToDo;
+  }
+  deleteTaskInProgress(taskId) {
+    const newTasksInProgress = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (task.id != taskId && task.status == "inProgress") {
+        newTasksToDo.push(task);
+      }
+    }
+    this.tasks = newTasksInProgress;
+  }
+
+  deleteTaskDone(taskId) {
+    const newTasksDone = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = this.tasks[i];
+      if (task.id != taskId && task.status === "toDo") {
+        newTasksDone.push(task);
+      }
+    }
+    this.tasks = newTasksDone;
+  }
+  //==========================================
+  // Sprint-3 Stretch Goal : Edit Modal Popup
+  //==========================================
+  editTask(taskId, name, description, assignedTo, dueDate, status){
+    const editedTaskObject = {
+      id : task,
+      name,
+      description,
+      assignedTo,
+      dueDate,
+      status
+    }
+
+    const index = this.tasks.findIndex((item)=>item.id === taskId);
+    this.tasks.splice(index, 1, editedTaskObject);
   }
 }
