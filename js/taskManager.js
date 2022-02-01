@@ -23,7 +23,11 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
       <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
           <h5>${name}</h5>
           <span class="badge ${
-            status === "toDo" ? "badge-danger" : status === "inProgress" ? "badge-warning" : "badge-success"
+            status === "toDo"
+              ? "badge-danger"
+              : status === "inProgress"
+              ? "badge-warning"
+              : "badge-success"
           }" >${formattedStatus}</span>
       </div>
       <div class="d-flex w-100 mb-3 justify-content-between">
@@ -153,30 +157,8 @@ class TaskManager {
     this.tasks = newTasks;
   }
 
-  //Question : The task must be in the To Do column, Otherwise, the event does not fire.Check..........
-  deleteTaskToDo(taskId) {
-    const newTasksToDo = [];
-    for (let i = 0; i < this.tasks.length; i++) {
-      const task = this.tasks[i];
-      if (task.id != taskId && task.status == "toDo") {
-        newTasksToDo.push(task);
-      }
-    }
-    this.tasks = newTasksToDo;
-  }
-  deleteTaskInProgress(taskId) {
-    const newTasksInProgress = [];
-    for (let i = 0; i < this.tasks.length; i++) {
-      const task = this.tasks[i];
-      if (task.id != taskId && task.status == "inProgress") {
-        newTasksToDo.push(task);
-      }
-    }
-    this.tasks = newTasksInProgress;
-  }
-
-  deleteTaskDone(taskId) {
-    const newTasksDone = [];
+  markTaskAsDone(taskId) {
+    const updatedList = [];
     for (let i = 0; i < this.tasks.length; i++) {
       const task = this.tasks[i];
       if (task.id != taskId && task.status === "toDo") {
@@ -188,17 +170,16 @@ class TaskManager {
   //==========================================
   // Sprint-3 Stretch Goal : Edit Modal Popup
   //==========================================
-  editTask(taskId, name, description, assignedTo, dueDate, status){
+  editTask(taskId, name, description, assignedTo, dueDate, status) {
     const editedTaskObject = {
-      id : taskId,
+      id: taskId,
       name,
       description,
       assignedTo,
       dueDate,
-      status
-    }
-
-    const index = this.tasks.findIndex((item)=>item.id === taskId);
+      status,
+    };
+    const index = this.tasks.findIndex((item) => item.id === taskId);
     this.tasks.splice(index, 1, editedTaskObject);
   }
 }
