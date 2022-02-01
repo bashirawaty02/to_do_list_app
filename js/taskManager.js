@@ -156,17 +156,6 @@ class TaskManager {
     }
     this.tasks = newTasks;
   }
-
-  markTaskAsDone(taskId) {
-    const updatedList = [];
-    for (let i = 0; i < this.tasks.length; i++) {
-      const task = this.tasks[i];
-      if (task.id != taskId && task.status === "toDo") {
-        newTasksDone.push(task);
-      }
-    }
-    this.tasks = newTasksDone;
-  }
   //==========================================
   // Sprint-3 Stretch Goal : Edit Modal Popup
   //==========================================
