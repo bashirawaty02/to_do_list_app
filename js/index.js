@@ -241,39 +241,36 @@ displayCurrentDate(dateElement);
 // Sprint - 3 - Task 8 - Update A Task
 //===============================================================
 const tasksList = document.querySelectorAll("#todo, #inprogress, #done");
-tasksList.forEach(element =>{
+tasksList.forEach((element) => {
   element.addEventListener("click", (event) => {
+    // select the li
+    const parentTask = event.target.parentElement.parentElement;
+    const taskId = Number(parentTask.dataset.taskId);
+
     if (event.target.classList.contains("done-button")) {
-      // select the li
-      const parentTask = event.target.parentElement.parentElement;
-      const taskId = Number(parentTask.dataset.taskId);
       let task = taskManager.getTaskById(taskId);
       task.status = "done";
       taskManager.save();
       taskManager.render();
     }
-  
+
     //======================================
     // Sprint - 3 :  Task 10: Deleting Tasks
     //======================================
     if (event.target.classList.contains("delete-button")) {
-      const parentTask = event.target.parentElement.parentElement;
-      const taskId = Number(parentTask.dataset.taskId);
       taskManager.deleteTask(taskId);
       taskManager.save();
       taskManager.render();
     }
-  
+
     //======================================
     // Sprint - 3 :  Additional Feature - Edit button
     //======================================
     if (event.target.classList.contains("edit-button")) {
-      const parentTask = event.target.parentElement.parentElement;
-      const taskId = Number(parentTask.dataset.taskId);
       const index = taskManager.tasks.findIndex((item) => {
         if (item.id === taskId) return taskId;
       });
-  
+
       editTask = taskManager.tasks[index];
       preloadModal();
     }
@@ -359,7 +356,7 @@ function dragDrop(e) {
 // Sprint-3 Stretch Goal : Edit Modal Popup
 //===============================================================
 const editTaskForm = document.querySelector("#editTaskForm");
-if(editTaskForm){
+if (editTaskForm) {
   editTaskForm.addEventListener("submit", (event) => {
     event.preventDefault();
     //Select inputs
@@ -367,7 +364,9 @@ if(editTaskForm){
     const editTaskDescription = document.querySelector("#editTaskDescription");
     const editTaskAssignedTo = document.querySelector("#editTaskAssignedTo");
     const editTaskDueDate = document.querySelector("#editTaskDueDate");
-    const editValidationStatus = document.querySelector("#editValidationStatus");
+    const editValidationStatus = document.querySelector(
+      "#editValidationStatus"
+    );
 
     // Get all inputs values and remove white spaces with trim()
     const name = editTaskNameInput.value.trim();
