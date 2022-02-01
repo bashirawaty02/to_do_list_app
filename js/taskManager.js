@@ -97,12 +97,12 @@ class TaskManager {
 
       // taskHtmlList.push(taskHTML);
     }
-    const tasksHtmlToDo = taskHtmlListToDo.join("\n");
-    document.querySelector("#todo").innerHTML = taskHtmlListToDo;
-    const tasksHtmlInProgress = taskHtmlListInProgress.join("\n");
-    document.querySelector("#inprogress").innerHTML = taskHtmlListInProgress;
-    const tasksHtmlDone = taskHtmlListDone.join("\n");
-    document.querySelector("#done").innerHTML = taskHtmlListDone;
+    const tasksHtmlToDo = taskHtmlListToDo.join("<br>");
+    document.querySelector("#todo").innerHTML = tasksHtmlToDo;
+    const tasksHtmlInProgress = taskHtmlListInProgress.join("<br>");
+    document.querySelector("#inprogress").innerHTML = tasksHtmlInProgress;
+    const tasksHtmlDone = taskHtmlListDone.join("<br>");
+    document.querySelector("#done").innerHTML = tasksHtmlDone;
 
     // console.log(task.status);
     // if (task.status === "toDo") {
