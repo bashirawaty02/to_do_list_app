@@ -142,6 +142,11 @@ The followings are the main classes of To Do Application:
 
 1. To make the tasks draggable, add draggable="true" to li in TaskManager class
 
+## Night Mode Feature added
+
+1. Added a toggleable button to the main page to switch between a lighter and a darker themed page.
+
+
 <hr>
 
 ## References
