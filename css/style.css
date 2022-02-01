@@ -57,6 +57,15 @@ h2 {
   border-bottom: 0.3rem solid var(--green);
   text-shadow: 0.2rem 0.2rem 0.5rem #555;
 }
+
+.badge {
+  text-shadow: 1px 1px black;
+}
+
+.badge-warning{
+  color: white;
+  background-color: rgb(207, 158, 35)
+}
 /* Initially, HIDE THE TASK FORM  */
 
 .modal-header,
@@ -400,6 +409,15 @@ max-width: 100%;
 .dark .close{
   color:white;
 }
+
+.dark .success small{
+color:palegreen;
+}
+
+.success textarea, .success input, .success select{
+  border-color: palegreen;
+}
+
 /************************************************/
 /*               Drag and Drop Feature          */
 /************************************************/
