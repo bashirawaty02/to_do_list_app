@@ -66,6 +66,16 @@ h2 {
   color: white;
   background-color: rgb(207, 158, 35)
 }
+
+.list-group-item:first-child{
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.light-dark-toggle:hover {
+  background-color: rgb(209 208 208);
+}
+
 /* Initially, HIDE THE TASK FORM  */
 
 .modal-header,
