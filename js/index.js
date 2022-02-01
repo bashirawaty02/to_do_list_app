@@ -422,3 +422,107 @@ function preloadModal() {
   clearErrorMessage(editTaskDueDate);
   clearErrorMessage(editValidationStatus);
 }
+
+// Weather Display
+
+//=======================================================
+//    Weather Display
+//=======================================================
+//Const and variables
+const apiKey = "485d25760ed348d6ecf9be1f52050593";
+
+const iconElement = document.querySelector(".weather-icon");
+const temperatureElement = document.querySelector(".temperature-value p");
+const descriptionElement = document.querySelector(".temperature-description");
+const locationElement = document.querySelector(".location p");
+const notificationElement = document.querySelector(".notification");
+
+// Weather data
+const weather = {};
+weather.temperature = {
+  unit: "celsius",
+};
+
+// https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API
+// Check if the browser supports Geolocalisation or user allows it
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(setCurrentPosition, showError);
+} else {
+  notificationElement.style.display = "block";
+  notificationElement.innerHTML = `<p>Browser does not support Geolocalization</p>`;
+}
+
+//Set user position
+function setCurrentPosition(position) {
+  if (position) {
+    getWeather(position.coords.latitude, position.coords.longitude);
+    // console.log(position.coords.latitude, position.coords.longitude);
+  }
+}
+
+// Show error when there is an issue with geolocalisation Service
+function showError(error) {
+  notificationElement.style.display = "block";
+  notificationElement.innerHTML = `<p>${error.message}</p>`;
+}
+
+//Get weather from API provider
+function getWeather(latitude, longitude) {
+  let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,daily,alerts&units=metric&appid=${apiKey}`;
+  // console.log(api);
+
+  fetch(api)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      // weather.temperature.value = Math.floor(data.main.temp - 273)
+      weather.temperature.value = Math.floor(data.main.temp - 273);
+      // weather.description = data.weather[0].description;
+      weather.iconId = data.weather[0].icon;
+      weather.city = data.name;
+      weather.country = data.sys.country;
+    })
+    .then(function () {
+      displayWeather();
+    });
+}
+
+// Display weather to UI
+function displayWeather() {
+  iconElement.innerHTML = `<img src="icon/${weather.iconId}.png" />`;
+  temperatureElement.innerHTML = `${weather.temperature.value}° <span>C</span>`;
+  // descriptionElement.innerHTML = weather.description;
+  locationElement.innerHTML = `${weather.city}, ${weather.country}`;
+}
+
+class Geolocation {
+  constructor() {
+    this.latitude = 0;
+    this.longitude = 0;
+    this.apiKey = "ab7607c948df39097d8cdb116d2c388b";
+  }
+
+  getGeolocation() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(setPosition, showError);
+    } else {
+      notificationElement.style.display = "block";
+      notificationElement.innerHTML = `<p>Browser does not support Geolocalization</p>`;
+    }
+  }
+
+  setCurrentPosition(position) {
+    // google.maps.event.addDomListener(window, 'load', initialize);
+    let latitude = position.coord.latitude;
+    let longitude = position.coord.longitude;
+    getWeather(latitude, longitude);
+  }
+
+  // Show error when there is an issue with geolocalisation Service
+  showError(error) {
+    notificationElement.style.display = "block";
+    notificationElement.innerHTML = `<p>${error.message}</p>`;
+  }
+}
+

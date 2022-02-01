@@ -62,12 +62,12 @@ h2 {
   text-shadow: 1px 1px black;
 }
 
-.badge-warning{
+.badge-warning {
   color: white;
-  background-color: rgb(207, 158, 35)
+  background-color: rgb(207, 158, 35);
 }
 
-.list-group-item:first-child{
+.list-group-item:first-child {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
 }
@@ -124,33 +124,33 @@ label {
   background-color: var(--green);
 }
 
-.list-group .btn{
+.list-group .btn {
   margin-left: 0.5rem;
 }
 
-.list-group .done-button{
+.list-group .done-button {
   color: #28a745;
   border-style: solid;
   border-color: #28a745;
 }
 
-.list-group .edit-button{
+.list-group .edit-button {
   color: #4285f4;
   border-style: solid;
   border-color: var(--blue);
 }
 
-.list-group .delete-button:hover{
-  background-color: var(--red)
+.list-group .delete-button:hover {
+  background-color: var(--red);
 }
 
-.list-group .edit-button:hover{
+.list-group .edit-button:hover {
   background-color: var(--blue);
   color: white;
-  border-color: var(--blue)
+  border-color: var(--blue);
 }
 
-.list-group .done-button:hover{
+.list-group .done-button:hover {
   background-color: #28a745;
   color: white;
 }
@@ -217,11 +217,24 @@ li {
 
 /***************** Light and Dark theme *************/
 
+.additional-features {
+  color: var(--blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
 .light-dark,
-.timeDisplay {
+.timeDisplay,
+.weather {
   display: inline-block;
   margin-top: 2rem;
   vertical-align: top;
+}
+
+.weather{
+
 }
 /* Position the light dark toggle bar to the right  */
 .light-dark {
@@ -285,62 +298,62 @@ body.dark {
   background-color: black;
 } */
 
-.dark h1{
+.dark h1 {
   color: #ff6961;
   text-shadow: 2px 2px #5d2522;
 }
 
-.dark h2{
-  color:whitesmoke;
+.dark h2 {
+  color: whitesmoke;
   text-shadow: 2px 2px rgb(109, 109, 109);
-  border-bottom: .3rem solid #ff6961;
+  border-bottom: 0.3rem solid #ff6961;
 }
 
-.dark h3{
+.dark h3 {
   color: whitesmoke;
   text-shadow: 2px 2px rgb(109, 109, 109);
 }
 
-.dark .timeDisplay{
-  color:whitesmoke;
+.dark .timeDisplay {
+  color: whitesmoke;
   text-shadow: 2px 2px rgb(109, 109, 109);
 }
 
-.dark #open-task-modal{
+.dark #open-task-modal {
   background-color: #ff6961;
   text-shadow: 2px 2px rgb(109, 109, 109);
-  color:whitesmoke;
+  color: whitesmoke;
 }
 
-.dark .bg-img{
-  border:3px solid #ff6961;
+.dark .bg-img {
+  border: 3px solid #ff6961;
 }
 
-.dark .list-group-item{
+.dark .list-group-item {
   background-color: #4c4d53;
   border: 1px solid #ff6961;
-  color:rgb(209, 209, 209); 
+  color: rgb(209, 209, 209);
 }
-.dark .list-group-item h5{
-  color:whitesmoke;
+.dark .list-group-item h5 {
+  color: whitesmoke;
 }
 
-.dark .to-do-col{
+.dark .to-do-col {
   margin: 1rem;
   border-radius: 0.5rem;
   border: #ff6961 1px solid !important;
 }
 
-.dark .in-progress-col{
+.dark .in-progress-col {
   margin: 1rem;
   border-radius: 0.5rem;
   border: #ff6961 1px solid !important;
 }
 
-.dark .done-col{
+.dark .done-col {
   margin: 1rem;
   border-radius: 0.5rem;
-  border: #ff6961 1px solid !important; 
+  border: #ff6961 1px solid !important;
 }
 
 .dark .hold {
@@ -354,77 +367,79 @@ body.dark {
   border: #ff6961 1px solid;
 }
 
-.dark .edit-button{
+.dark .edit-button {
   background-color: #4285f4;
   color: #fff;
 }
-.dark .edit-button:hover{
+.dark .edit-button:hover {
   background-color: #005ff8;
   border-color: #005ff8;
   color: #fff;
 }
 
-.dark .delete-button{
+.dark .delete-button {
   background-color: #ff6961;
   border-color: #ff6961;
   color: #fff;
 }
-.dark .delete-button:hover{
+.dark .delete-button:hover {
   background-color: var(--red);
   border-color: var(--red);
   color: #fff;
 }
 
-.dark .list-group .done-button{
+.dark .list-group .done-button {
   background-color: #28a745;
   border-style: solid;
   border-color: #28a745;
   color: #fff;
 }
 
-.dark .list-group .done-button:hover{
+.dark .list-group .done-button:hover {
   background-color: #1c8033;
   border-style: solid;
   border-color: #1c8033;
   color: #fff;
 }
 
-.dark .drag-drop-container > div{
-max-width: 100%;
+.dark .drag-drop-container > div {
+  max-width: 100%;
 }
 
-.dark .modal-content{
+.dark .modal-content {
   background-color: #24252a;
-  
 }
 
-.dark .modal-header, .dark label {
-  color:whitesmoke;
-  text-shadow:none;
+.dark .modal-header,
+.dark label {
+  color: whitesmoke;
+  text-shadow: none;
 }
 
 .dark .modal-title {
-  color:whitesmoke;
-  text-shadow:none;
+  color: whitesmoke;
+  text-shadow: none;
   background: none;
   border-bottom: none;
 }
 
-.dark .btn-block{
+.dark .btn-block {
   background-color: #ff6961;
   text-shadow: rgb(109 109 109) 2px 2px;
-  color:whitesmoke;
+  color: whitesmoke;
 }
 
-.dark .close{
-  color:white;
+.dark .close {
+  color: white;
 }
 
-.dark .success small{
-color:palegreen;
+.dark .success small {
+  color: palegreen;
 }
 
-.success textarea, .success input, .success select{
+.success textarea,
+.success input,
+.success select {
   border-color: palegreen;
 }
 
@@ -479,7 +494,6 @@ h5 {
   cursor: pointer;
 }
 
-
 /* Hold and dragging the task item  */
 .hold {
   border: solid rgba(255, 255, 255, 0.3) 4px;
@@ -503,14 +517,80 @@ h5 {
     align-items: center;
   }
 
-  .col{
-    margin-left:15px;
+  .col {
+    margin-left: 15px;
   }
 
   .drag-drop-container {
     margin-left: 5px;
     padding: 15px;
   }
+}
 
 
+/************************************************/
+/*                Weather Display               */
+/************************************************/
+
+.notification {
+  color: lightcoral;
+  display: none;
+}
+
+.weather-icon{
+  width: 4rem;
+  height: 3rem;
+}
+
+.temperature-value, .temperature-description, .location {
+  color: var(--red)
+}
+.temperature-value > span{
+  font-size: 1.4rem;
+}
+
+/* =================================================== */
+
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+div.wrapper {
+  margin: 0 auto;
+  min-width: 50%;
+  max-width: 70%;
+  text-align: center;
+  padding: 50px 20px 50px 20px;
+  margin-top: 200px;
+  border-radius: 5px;
+  color: #23AAB0;
+  border: 1px solid rgba(15, 80, 99, .2);
+  
+}
+
+.icon {
+  transform: scale(1);
+  margin-top: 10px;
+  animation: fly 1.5s infinite;
+  animation-direction: alternate;
+}
+
+div#cityName {
+  margin-top: 10px;
+}
+
+span.tempNum {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #23AAB0;
+}
+
+#currentTempF {
+  display: none;
+}
+
+span {
+  color: #0f5063;
 }

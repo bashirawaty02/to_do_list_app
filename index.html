@@ -28,6 +28,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
   </head>
   <body>
     <!-- TASK LIST HEADING  -->
@@ -37,10 +38,27 @@
         <h1 class="my-5">To Do List App</h1>
       </div>
 
-      <div class="container">
+      <div class="container additional-features">
         <div class="timeDisplay">
           <span id="currentDate"> </span>
         </div>
+        <div class="weather">
+          <p class="notification">notification</p>
+        </div>
+        <div class="weather">
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            alt=""
+            class="weather-icon"
+          />
+        </div>
+        <div class="weather">
+          <p class="temperature-value"> 22 &#176; C</p>
+        </div>
+        <div class="weather">
+          <p class="location">Sydney</p>
+        </div>
+
         <div class="light-dark">
           <input type="checkbox" class="checkbox" id="checkbox" />
           <label for="checkbox" class="label" id="lightDark">
@@ -294,6 +312,12 @@
     </div>
 
     <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
       crossorigin="anonymous"
@@ -308,8 +332,14 @@
       integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
       crossorigin="anonymous"
     ></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <script src="./js/taskManager.js"></script>
     <script src="./js/index.js"></script>
   </body>
