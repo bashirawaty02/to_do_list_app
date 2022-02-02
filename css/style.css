@@ -687,3 +687,24 @@ input.search-bar{
 /************************************************/
 /*           Light Mode Scroll Bar              */
 /************************************************/
+
+::-webkit-scrollbar{
+  width: 1.5em;
+  height: 1em;
+}
+
+::-webkit-scrollbar-track{
+  background: #b99b7e;
+  border-radius: 100vw;
+  margin-block: .5em;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #eec8a1;
+  border: .25em solid #eec296;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #d1a880;
+}
