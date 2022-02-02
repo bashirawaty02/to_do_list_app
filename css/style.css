@@ -694,7 +694,7 @@ input.search-bar{
 }
 
 ::-webkit-scrollbar-track{
-  background: #b99b7e;
+  background: #cccccc;
   border-radius: 100vw;
   margin-block: .5em;
 }
