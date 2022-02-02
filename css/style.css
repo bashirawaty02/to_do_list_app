@@ -248,7 +248,6 @@ footer{
 .timeDisplay,
 .weather {
   display: inline-block;
-  margin-top: 2rem;
   vertical-align: top;
 }
 
@@ -331,6 +330,10 @@ body.dark {
 .dark h3 {
   color: whitesmoke;
   text-shadow: 2px 2px rgb(109, 109, 109);
+}
+
+.dark h5{
+  color: whitesmoke;
 }
 
 .dark .timeDisplay {
@@ -482,6 +485,24 @@ body.dark {
   border-radius: 10px;
 }
 
+.dark .card{
+  background-color:rgb(36, 37, 42);
+  color: whitesmoke;
+}
+
+.dark input.search-bar{
+  color:whitesmoke;
+}
+
+.dark .btn-weather{
+  color: white;
+}
+
+.dark .btn-weather:hover{
+  background-color: grey;
+  color: white
+}
+
 /************************************************/
 /*               Drag and Drop Feature          */
 /************************************************/
@@ -576,7 +597,6 @@ h5 {
     color: var(--darkgreen);
     padding: 2em;
     border-radius: 30px;
-    width: 100%;
     max-width: 400px;
     margin: 1em;
     text-align: center;
