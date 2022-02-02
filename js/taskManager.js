@@ -35,7 +35,7 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
           <small>Due: ${dueDate}</small>
       </div>
       <p>${description}</p>
-      <div class="d-flex w-100 justify-content-end">
+      <div class="d-flex w-100 ">
           <button class="btn done-button ${
             status != "done" ? "visible" : "invisible"
           }">DONE
