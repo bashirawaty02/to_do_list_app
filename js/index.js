@@ -452,13 +452,13 @@ let weather = {
       "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector(".description").innerText = description;
     document.querySelector(".temp").innerText = temp + "°C";
-    document.querySelector(".humidity").innerText =
-      "Humidity : " + humidity + "%";
-    document.querySelector(".wind").innerText =
-      "Wind Speed : " + speed + " km/hr";
-    document.querySelector(".weather").classList.remove("loading");
-    // document.querySelector(".card").style.backgroundImage =
-    //   "url('https://source.unsplash.com/400x400/?" + name + ")";
+    // document.querySelector(".humidity").innerText =
+    //   "Humidity : " + humidity + "%";
+    // document.querySelector(".wind").innerText =
+    //   "Wind Speed : " + speed + " km/hr";
+    // document.querySelector(".weather").classList.remove("loading");
+    document.querySelector(".heading").style.backgroundImage =
+      "url('https://source.unsplash.com/1110x400/?" + name + ")";
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);

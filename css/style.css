@@ -12,7 +12,7 @@ body {
 }
 
 .bg-img {
-  background: url(../img/bg.jpg) center no-repeat;
+  /* background: url(../img/bg.jpg) center no-repeat; */
   height: 30vh;
   background-size: cover;
   flex-direction: column;
@@ -27,8 +27,8 @@ h1 {
   width: auto;
   color: var(--darkgreen);
   background: linear-gradient(
-      rgba(227, 231, 173, 0.2),
-      rgba(255, 255, 255, 0.3)
+      rgba(227, 231, 173, 1),
+      rgba(255, 255, 255, 0.8)
     ),
     center no-repeat;
   padding: 3rem;
