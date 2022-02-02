@@ -93,6 +93,10 @@ label {
   margin: 2rem;
 } */
 
+/**************** Additional Features **************/
+.container {
+  justify-content: space-between;
+}
 /* To display the error message  */
 .form-group {
   margin-bottom: 10px;
@@ -567,65 +571,50 @@ h5 {
 /*                Weather Display               */
 /************************************************/
 
-.notification {
-  color: lightcoral;
-  display: none;
+.card {
+    /* background-color: var(--notebook); */
+    color: var(--darkgreen);
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 400px;
+    margin: 1em;
+    text-align: center;
+    border: none;
+    background-color: none;
 }
 
-.weather-icon{
-  width: 4rem;
-  height: 4rem;
+.search {
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.temperature-value, .temperature-description, .location {
-  color: var(--red)
-}
-.temperature-value > span{
-  font-size: 1.4rem;
-}
-
-/* =================================================== */
-
-a:link {
-  text-decoration: none;
-  color: inherit;
-}
-
-
-div.wrapper {
-  margin: 0 auto;
-  min-width: 50%;
-  max-width: 70%;
-  text-align: center;
-  padding: 50px 20px 50px 20px;
-  margin-top: 200px;
-  border-radius: 5px;
-  color: #23AAB0;
-  border: 1px solid rgba(15, 80, 99, .2);
-  
-}
-
-.icon {
-  transform: scale(1);
-  margin-top: 10px;
-  animation: fly 1.5s infinite;
-  animation-direction: alternate;
-}
-
-div#cityName {
-  margin-top: 10px;
-}
-
-span.tempNum {
-  text-decoration: underline;
+.btn-weather {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 3em;
+  width: 3em;
+  outline: none;
+  color: var(--red);
+  background : #7c7c7b2d;
   cursor: pointer;
-  color: #23AAB0;
+  transition: 0.2s ease-in-out;
 }
 
-#currentTempF {
-  display: none;
+.btn-weather:hover{
+  background : var(--green);
+  color: #242422;
 }
-
-span {
-  color: #0f5063;
+input.search-bar{
+  border: none;
+  outline: none;
+  padding: 0.5em 1em;
+  border-radius:24px;
+  background : #7c7c7b2d;
+  color: var(--darkgreen);
+  font-family: inherit;
+  font-size: 100%;
+  /* width: calc(10% -70px); */
 }
