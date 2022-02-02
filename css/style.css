@@ -206,6 +206,21 @@ li {
   color: var(--darkgreen);
 }
 
+footer{
+  background: linear-gradient(
+    rgba(227, 231, 173, 0.2),
+    rgba(255, 255, 255, 0.3)
+  ),
+  center no-repeat;
+  text-align: center;
+  align-items: center;
+  color: black;
+  padding: 10px;
+  margin-left: 28.5%;
+  max-width: 43%;
+  border-radius: 10px;
+}
+
 /* TASK 4: TIME DISPLAY  */
 .timeDisplay {
   display: block;
@@ -449,6 +464,18 @@ body.dark {
 
 .dark .temperature-value,.dark .temperature-description,.dark .location{
   color: #ff6961;
+}
+
+.dark footer{
+  background:none;
+  background-color: #44444436;
+  text-align: center;
+  align-items: center;
+  color: rgb(218, 218, 218);
+  padding: 10px;
+  margin-left: 28.5%;
+  max-width: 43%;
+  border-radius: 10px;
 }
 
 /************************************************/
