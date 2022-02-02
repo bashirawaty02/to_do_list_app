@@ -274,7 +274,7 @@ Select toggle inside the label and change the position from left to right.
 https://stackoverflow.com/questions/19000124/how-to-add-different-styles-to-one-label-field-using-css
  */
 label span {
-  width: 3rem;
+  width: 2rem;
   height: 2.3rem;
   background-color: rgb(66, 66, 66);
   display: flex;
@@ -291,16 +291,27 @@ label span {
 }
 .fa-sun {
   color: rgb(250, 233, 0);
-  text-shadow:none 
+  text-shadow:none; 
+  font-size: 29px;
 }
 .light-dark-toggle {
-  top: 2px;
-  left: 2px;
+  left: -5px;
   border-radius: 50%;
   background-color: rgb(165, 165, 165);
   position: absolute;
-  height: 2.1rem;
-  width: 2.3rem;
+  height: 3rem;
+  width: 3rem;
+  /* this is added to make the transition smooth  */
+  transition: transform 0.15s linear;
+}
+
+.dark .light-dark-toggle {
+  left: -5px;
+  border-radius: 50%;
+  background-color: #ff6961;
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
   /* this is added to make the transition smooth  */
   transition: transform 0.15s linear;
 }
@@ -346,6 +357,14 @@ body.dark {
   background-color: #ff6961;
   text-shadow: 2px 2px rgb(109, 109, 109);
   color: whitesmoke;
+}
+
+.dark #open-task-modal:hover {
+  background-color: #f0483f;
+}
+
+.search-bar::placeholder{
+  color: white;
 }
 
 .dark .bg-img {
@@ -622,6 +641,15 @@ h5 {
   background : #7c7c7b2d;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+}
+
+.icon{
+  width: 50%;
+  margin:auto;
+}
+
+.description::first-letter{
+text-transform: uppercase;
 }
 
 .btn-weather:hover{
