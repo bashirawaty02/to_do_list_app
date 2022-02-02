@@ -290,7 +290,8 @@ label span {
   color: #f5f5f5;
 }
 .fa-sun {
-  color: rgba(255, 0, 0, 0);
+  color: rgb(250, 233, 0);
+  text-shadow:none 
 }
 .light-dark-toggle {
   top: 2px;
@@ -638,3 +639,33 @@ input.search-bar{
   font-size: 100%;
   /* width: calc(10% -70px); */
 }
+
+/************************************************/
+/*           Night Mode Scroll Bar              */
+/************************************************/
+
+.dark::-webkit-scrollbar{
+  width: 1.5em;
+  height: 1em;
+}
+
+.dark::-webkit-scrollbar-track{
+  background: #eeeeee36;
+  border-radius: 100vw;
+  margin-block: .5em;
+}
+
+.dark::-webkit-scrollbar-thumb{
+  background: #ff6961;
+  border: .25em solid #ff6961;
+  border-radius: 100vw;
+}
+
+.dark::-webkit-scrollbar-thumb:hover{
+  background: #ff4339d8;
+}
+
+
+/************************************************/
+/*           Light Mode Scroll Bar              */
+/************************************************/
