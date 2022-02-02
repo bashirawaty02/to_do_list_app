@@ -38,25 +38,25 @@
         <h1 class="my-5">To Do List App</h1>
       </div>
 
-      <div class="container additional-features">
+      <div class="additional-features">
         <div class="timeDisplay">
           <span id="currentDate"> </span>
         </div>
-        <div class="weather">
-          <p class="notification">notification</p>
+        <div class="card">
+          <div class="search">
+            <input type="text" class="search-bar" placeholder="Search" />
+            <button class="btn-weather"><i class="fas fa-search"></i></button>
+          </div>
         </div>
-        <div class="weather">
-          <img
-            src="http://openweathermap.org/img/wn/10d@2x.png"
-            alt=""
-            class="weather-icon"
-          />
+        <div class="card">
+             <h5 class="city">Jeju </h5>
+            <div class="temp">13 °C</div>
         </div>
-        <div class="weather">
-          <p class="temperature-value"> 22 &#176; C</p>
-        </div>
-        <div class="weather">
-          <p class="location">Sydney</p>
+        <div class="card">
+          <div class="description">Cloudy</div>
+          <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="" class="icon" />
+            <!-- <div class="humidity">Humidity : 60%</div>
+            <div class="wind">Wind Speed : 6.2km/hr</div> -->
         </div>
 
         <div class="light-dark">
@@ -314,6 +314,8 @@
     <footer>
       <p>Created by <a href=https://github.com/ktSuW  target="_blank">Su</a>, <a href=https://github.com/vvickydev target="_blank">Victoria</a> & <a href="https://github.com/leevidalone" target="_blank">David</a> ©</p>
     </footer>
+
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
@@ -342,8 +344,8 @@
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="./js/taskManager.js"></script>
+      ></script>
+      <script src="./js/taskManager.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>
