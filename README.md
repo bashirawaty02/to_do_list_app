@@ -12,8 +12,8 @@ Github Repo: [https://github.com/ktSuW/to_do_list_app]
 
 Contributor :
 
-- Victoria
-- David
+- [Victoria](https://github.com/vvickydev)
+- [David](https://github.com/leevidalone)
 - [Su](https://github.com/ktSuW)
 
 <hr>
