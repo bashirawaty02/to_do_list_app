@@ -251,9 +251,10 @@ footer{
   vertical-align: top;
 }
 
-.weather{
-
+.datetime{
+  font-size: 18px;
 }
+
 /* Position the light dark toggle bar to the right  */
 .light-dark {
   float: right;
@@ -298,17 +299,6 @@ label span {
   left: -5px;
   border-radius: 50%;
   background-color: rgb(165, 165, 165);
-  position: absolute;
-  height: 3rem;
-  width: 3rem;
-  /* this is added to make the transition smooth  */
-  transition: transform 0.15s linear;
-}
-
-.dark .light-dark-toggle {
-  left: -5px;
-  border-radius: 50%;
-  background-color: #ff6961;
   position: absolute;
   height: 3rem;
   width: 3rem;
@@ -522,6 +512,22 @@ body.dark {
   background-color: grey;
   color: white
 }
+
+.dark .light-dark-toggle {
+  left: -5px;
+  border-radius: 50%;
+  background-color: #ff6961;
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  /* this is added to make the transition smooth  */
+  transition: transform 0.15s linear;
+}
+
+.dark .light-dark-toggle:hover {
+  background-color: #ff5a51;
+}
+
 
 /************************************************/
 /*               Drag and Drop Feature          */
