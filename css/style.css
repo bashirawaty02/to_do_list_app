@@ -58,6 +58,15 @@ h2 {
   text-shadow: 1px 1px black;
 }
 
+/* paragraph scroll */
+
+p {
+  max-width: 232px;
+  max-height: 72px;
+  overflow: auto;
+  word-wrap: break-word;
+}
+
 .list-group-item:first-child {
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
@@ -95,6 +104,7 @@ label {
   color: rgb(255 255 255);
   text-shadow: rgb(83 141 74) 2px 2px;
   border-bottom: none;
+  margin-left: 4rem;
 }
 
 .modal-content {
@@ -443,17 +453,17 @@ body.dark {
 
 .dark h5 {
   color: whitesmoke;
-  text-shadow: rgb(39, 39, 39) 3px 3px;
+  text-shadow: 2px 2px black;
 }
 
 .dark .timeDisplay {
   color: whitesmoke;
-  text-shadow: 2px 2px rgb(39, 39, 39);
+  text-shadow: 2px 2px black;
   background: #24252a;
 }
 
 .dark .description {
-  text-shadow: none;
+  text-shadow: 2px 2px black;
 }
 
 .dark label span {
@@ -565,14 +575,18 @@ body.dark {
 .dark .modal-title {
   color: whitesmoke;
   text-shadow: none;
-  background: none;
   border-bottom: none;
+  margin-left: 4rem;
 }
 
 .dark .btn-block {
   background-color: #ff6961;
   text-shadow: rgb(109 109 109) 2px 2px;
   color: whitesmoke;
+}
+
+.dark .btn-block:hover{
+  background-color: #f0483f;
 }
 
 .dark .close {
@@ -614,6 +628,7 @@ body.dark {
 .dark .card {
   background-color: rgb(36, 37, 42);
   color: whitesmoke;
+  text-shadow: 2px 2px black;
 }
 
 .dark input.search-bar {
@@ -828,6 +843,26 @@ input.search-bar {
   background: #ff4339d8;
 }
 
+.dark p::-webkit-scrollbar{
+  width: 0.5em;
+  height: 1em;
+}
+
+.dark p::-webkit-scrollbar-track {
+  background: #eeeeee36;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+.dark p::-webkit-scrollbar-thumb {
+  background: #ff6961;
+  border: 0.25em solid #ff6961;
+  border-radius: 100vw;
+}
+
+.dark p::-webkit-scrollbar-thumb:hover {
+  background: #ff4339d8;
+}
 /************************************************/
 /*           light Mode Scroll Bar              */
 /************************************************/
@@ -838,7 +873,7 @@ input.search-bar {
 }
 
 ::-webkit-scrollbar-track {
-  background: #eeeeee36;
+  background: #ecd7d7;
   border-radius: 100vw;
   margin-block: 0.5em;
 }
@@ -850,5 +885,26 @@ input.search-bar {
 }
 
 ::-webkit-scrollbar-thumb:hover {
+  background: rgb(255 147 166);
+}
+
+p::-webkit-scrollbar {
+  width: 0.5em;
+  height: 1em;
+}
+
+p::-webkit-scrollbar-track {
+  background: #ecd7d7;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+p::-webkit-scrollbar-thumb {
+  background: pink;
+  border: 0.25em solid pink;
+  border-radius: 100vw;
+}
+
+p::-webkit-scrollbar-thumb:hover {
   background: rgb(255 147 166);
 }
