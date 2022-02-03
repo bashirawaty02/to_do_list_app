@@ -1,6 +1,12 @@
 "use Strict";
 
-const formatStatus = (status) => {
+class TaskManager {
+  constructor(currentId = 0) {
+    this.tasks = [];
+    this.currentId = currentId;
+  }
+
+  formatStatus(status) {
   switch (status) {
     case "toDo":
       status = "TO DO";
@@ -16,8 +22,7 @@ const formatStatus = (status) => {
   return status;
 };
 
-const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
-  formattedStatus = formatStatus(status);
+createTaskHTML(id, name, description, assignedTo, dueDate, status){
   const html = `
     <li data-task-id=${id} class="list-group-item"  ondragstart="dragStart(event)"  draggable="true" id="${id}">
       <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
@@ -28,7 +33,7 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
               : status === "inProgress"
               ? "badge-warning"
               : "badge-success"
-          }" >${formattedStatus}</span>
+          }" >${this.formatStatus(status)}</span>
       </div>
       <div class="d-flex w-100 mb-3 justify-content-between">
           <small>Assigned To: ${assignedTo}</small>
@@ -51,12 +56,6 @@ const createTaskHTML = (id, name, description, assignedTo, dueDate, status) => {
     </li><br>`;
   return html;
 };
-
-class TaskManager {
-  constructor(currentId = 0) {
-    this.tasks = [];
-    this.currentId = currentId;
-  }
   addTask(name, description, assignedTo, dueDate, status) {
     const task = {
       id: ++this.currentId,
@@ -79,7 +78,7 @@ class TaskManager {
       const date = new Date(task.dueDate);
       const formattedDate =
         date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
-      const taskHTML = createTaskHTML(
+      const taskHTML = this.createTaskHTML(
         task.id,
         task.name,
         task.description,
