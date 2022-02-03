@@ -324,7 +324,6 @@ function dragLeave(e) {
   // console.log('drg leave');
 }
 function dragDrop(e) {
-  this.style.border = "var(--green) 1px solid";
   const id = e.dataTransfer.getData("text");
   // console.log(id);
   // console.log(id);
@@ -446,7 +445,7 @@ let weather = {
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
     // console.log(name, icon,description, temp, humidity, speed);
-    document.querySelector(".city").innerText =  name + " Weather";
+    document.querySelector(".city").innerText = name + " Weather";
     document.querySelector(".icon").src =
       "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector(".description").innerText = description;
@@ -477,5 +476,3 @@ document
   });
 
 weather.fetchWeather("Sydney");
-
-
