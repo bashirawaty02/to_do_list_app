@@ -302,6 +302,10 @@ a {
   color: rgb(116 180 231);
 }
 
+footer p {
+  max-width:none;
+}
+
 /* Temperature display */
 
 .temperature-value,
@@ -454,6 +458,7 @@ body.dark {
 .dark h5 {
   color: whitesmoke;
   text-shadow: 2px 2px black;
+  max-width:180px;
 }
 
 .dark .timeDisplay {
