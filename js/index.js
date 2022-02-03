@@ -325,7 +325,6 @@ function dragLeave(e) {
   // console.log('drg leave');
 }
 function dragDrop(e) {
-  this.style.border = "var(--green) 1px solid";
   const id = e.dataTransfer.getData("text");
   // console.log(id);
   // console.log(id);
@@ -447,7 +446,7 @@ let weather = {
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
     // console.log(name, icon,description, temp, humidity, speed);
-    document.querySelector(".city").innerText =  name + " Weather";
+    document.querySelector(".city").innerText = name + " Weather";
     document.querySelector(".icon").src =
       "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector(".description").innerText = description;
@@ -480,35 +479,35 @@ document
 weather.fetchWeather("Sydney");
 
 //realTimeClock
-function updateClock(){
+function updateClock() {
   var now = new Date();
   var hou = now.getHours(),
-      min = now.getMinutes(),
-      sec = now.getSeconds(),
-      pe = "AM";
+    min = now.getMinutes(),
+    sec = now.getSeconds(),
+    pe = "AM";
 
-      if(hou >= 12){
-        pe = "PM";
-      }
-      if(hou == 0){
-        hou = 12;
-      }
-      if(hou > 12){
-        hou = hou - 12;
-      }
+  if (hou >= 12) {
+    pe = "PM";
+  }
+  if (hou == 0) {
+    hou = 12;
+  }
+  if (hou > 12) {
+    hou = hou - 12;
+  }
 
-      Number.prototype.pad = function(digits){
-        for(var n = this.toString(); n.length < digits; n = 0 + n);
-        return n;
-      }    
-        
-      var ids = ["hour", "minutes", "seconds", "period"];
-      var values = [hou.pad(2), min.pad(2), sec.pad(2), pe];
-      for(var i = 0; i < ids.length; i++)
-      document.getElementById(ids[i]).firstChild.nodeValue = values[i];
+  Number.prototype.pad = function (digits) {
+    for (var n = this.toString(); n.length < digits; n = 0 + n);
+    return n;
+  };
+
+  var ids = ["hour", "minutes", "seconds", "period"];
+  var values = [hou.pad(2), min.pad(2), sec.pad(2), pe];
+  for (var i = 0; i < ids.length; i++)
+    document.getElementById(ids[i]).firstChild.nodeValue = values[i];
 }
 
-function initClock(){
+function initClock() {
   updateClock();
   window.setInterval("updateClock()", 1);
 }
