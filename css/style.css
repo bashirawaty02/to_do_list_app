@@ -339,6 +339,10 @@ a {
   vertical-align: top;
 }
 
+.datetime {
+  font-size: 18px;
+}
+
 /* Position the light dark toggle bar to the right  */
 .light-dark {
   float: right;
@@ -363,7 +367,7 @@ span {
 https://stackoverflow.com/questions/19000124/how-to-add-different-styles-to-one-label-field-using-css
  */
 label span {
-  width: 3rem;
+  width: 2rem;
   height: 2.3rem;
   background-color: pink;
   display: flex;
@@ -413,28 +417,49 @@ body.dark {
 
 .dark h2 {
   color: whitesmoke;
-  text-shadow: 2px 2px rgb(109, 109, 109);
-  border-bottom: 0.3rem solid #ff6961;
+  text-shadow: rgb(83, 83, 83) 3px 3px;
+  border-bottom: none;
+  background: none;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
 }
 
 .dark h3 {
   color: whitesmoke;
-  text-shadow: 2px 2px rgb(109, 109, 109);
+  text-shadow: rgb(39, 39, 39) 3px 3px;
+  border-bottom: none;
+  background: #4e4f55;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
 }
 
 .dark h5 {
   color: whitesmoke;
+  text-shadow: rgb(39, 39, 39) 3px 3px;
 }
 
 .dark .timeDisplay {
   color: whitesmoke;
-  text-shadow: 2px 2px rgb(109, 109, 109);
+  text-shadow: 2px 2px rgb(39, 39, 39);
 }
 
 .dark #open-task-modal {
   background-color: #ff6961;
-  text-shadow: 2px 2px rgb(109, 109, 109);
+  text-shadow: 2px 2px #a32822;
   color: whitesmoke;
+  font-size: larger;
+}
+
+.dark #open-task-modal:hover {
+  background-color: #f0483f;
+}
+
+.search-bar::placeholder {
+  color: white;
 }
 
 .dark .bg-img {
@@ -442,12 +467,15 @@ body.dark {
 }
 
 .dark .list-group-item {
-  background-color: #4c4d53;
-  border: 1px solid #ff6961;
+  background-color: rgb(76, 77, 83);
+  border: none;
   color: rgb(209, 209, 209);
 }
+
 .dark .list-group-item h5 {
   color: whitesmoke;
+  text-shadow: rgb(39, 39, 39) 2px 2px;
+  font-size: 1.2rem;
 }
 
 .dark .to-do-col {
@@ -595,6 +623,21 @@ body.dark {
   color: white;
 }
 
+.dark .light-dark-toggle {
+  left: -5px;
+  border-radius: 50%;
+  background-color: #ff6961;
+  position: absolute;
+  height: 3rem;
+  width: 3rem;
+  /* this is added to make the transition smooth  */
+  transition: transform 0.15s linear;
+}
+
+.dark .light-dark-toggle:hover {
+  background-color: #ff5a51;
+}
+
 /************************************************/
 /*               Drag and Drop Feature          */
 /************************************************/
@@ -719,9 +762,19 @@ h5 {
   transition: 0.2s ease-in-out;
 }
 
+.icon {
+  width: 50%;
+  margin: auto;
+}
+
+.description::first-letter {
+  text-transform: uppercase;
+}
+
 .btn-weather:hover {
   background-color: rgb(216, 151, 151);
 }
+
 input.search-bar {
   border: none;
   outline: none;
