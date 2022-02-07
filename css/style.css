@@ -38,6 +38,7 @@ h1 {
   letter-spacing: 0.6rem;
   /* border-bottom: 0.3rem solid var(--darkgreen); */
   text-shadow: rgb(113 151 107) 2px 2px;
+  background: rgba(7, 7, 7, 0.247);
 }
 
 h2 {
@@ -48,8 +49,8 @@ h2 {
   padding: 0 3rem;
   text-transform: capitalize;
   letter-spacing: 0.6rem;
-  color: rgb(217 228 200);
-  text-shadow: 2px 2px rgb(113 151 107);
+  color: rgb(238 200 161);
+  text-shadow: 2px 2px rgb(141 141 141);
   background: none;
   font-weight: 800;
 }
@@ -81,6 +82,7 @@ p {
 
 .list-group-item h5 {
   color: #ffffff;
+  font-size: 1.2rem;
 }
 
 img.weather-icon {
@@ -304,7 +306,7 @@ a {
 }
 
 footer p {
-  max-width:none;
+  max-width: none;
 }
 
 /* Temperature display */
@@ -459,7 +461,7 @@ body.dark {
 .dark h5 {
   color: whitesmoke;
   text-shadow: 2px 2px black;
-  max-width:180px;
+  max-width: 180px;
 }
 
 .dark .timeDisplay {
@@ -591,7 +593,7 @@ body.dark {
   color: whitesmoke;
 }
 
-.dark .btn-block:hover{
+.dark .btn-block:hover {
   background-color: #f0483f;
 }
 
@@ -708,6 +710,7 @@ h5 {
   color: whitesmoke;
   text-shadow: 2px 2px #ff93a6;
   font-size: larger;
+  max-width: 180px;
 }
 
 .to-do-col,
@@ -849,7 +852,7 @@ input.search-bar {
   background: #ff4339d8;
 }
 
-.dark p::-webkit-scrollbar{
+.dark p::-webkit-scrollbar {
   width: 0.5em;
   height: 1em;
 }
