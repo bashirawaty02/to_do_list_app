@@ -82,6 +82,7 @@ p {
 
 .list-group-item h5 {
   color: #ffffff;
+  font-size: 1.2rem;
 }
 
 img.weather-icon {
@@ -709,6 +710,7 @@ h5 {
   color: whitesmoke;
   text-shadow: 2px 2px #ff93a6;
   font-size: larger;
+  max-width: 180px;
 }
 
 .to-do-col,
