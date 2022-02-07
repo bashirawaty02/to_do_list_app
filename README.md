@@ -7,6 +7,7 @@ This repository contains the **_To Do List App_** application project code. This
 </p>
 
 The application enables the user to add tasks, update and delete tasks.
+
 - Deployed Site : [To Do App](https://genaustodo.netlify.app/)
 - Github Repo: [https://github.com/ktSuW/to_do_list_app]
 
@@ -105,9 +106,11 @@ Below diagram illustrates the class diagram for this project.
 <img src="./img/oop_ClassDiagram.png" alt="use case diagram" width="500" height = "300"/>
 
 The followings are the main classes of To Do Application:
-- Task Manager : the building block of the App. 
+
+- Task Manager : the building block of the App.
   - This class will be responsible for the features such as add, edit, delete and mark as done.
   - This class encapsulate tasks array list and currentId of the task.
+
 ### 3.4 Activity Diagram
 
 <hr>
@@ -118,34 +121,46 @@ The followings are the main classes of To Do Application:
 
 **Project Kickoff : 20 December 2021** - The following Trello Board demonstrated the sprint tasks planning status and tasks breakdown.
 
-<img src="./img/project_kickoff_trello.JPG" alt="Desk photo" width="900" height = "350"/>
+  <img src="./img/project_kickoff_trello.JPG" alt="Desk photo" width="900" height = "350"/>
 
 ### Spring 2
 
 **Project Kickoff : 27 January 2022** -
-**Project Kickoff : 31 January 2022** -
+
+  <img src="./img/project_sprint2_trello.JPG" alt="Desk photo" width="900" height = "350"/>
 
 ### Spring 3
 
-**Project Kickoff : 1 February 2022** -
 **Project Kickoff : 3 February 2022** -
 
 <hr>
 
+## Additional Features Added
+
+| 1. Open Weather API                                              | 2. Unplash API                                                  | 3. Light and Dark Mode                                         | 4. Drag and Drop API                                             |
+| ---------------------------------------------------------------- | --------------------------------------------------------------- | -------------------------------------------------------------- | ---------------------------------------------------------------- |
+| <img src="./img/feature_1_openweather.png" style="width: 350px"> | <img src="./img/feature_2_unplashAPI.png" style="width: 350px"> | <img src="./img/feature_3_lightDark.png" style="width: 350px"> | <img src="./img/feature_4_dragAndDrop.png" style="width: 350px"> |
+
+1. **Open Weather API :** Call Open Weather API and display weather of the searched city
+2. **Unplash API :** Call Unplash API and update images to reflect the city name searched
+3. **Light and Dark Mode :** Added a toggleable button to the main page to switch between a lighter and a darker themed page.
+4. **Drag and Drop API :** To make the tasks draggable, add draggable="true" to li in TaskManager class
+
 ## Lessons Learned
 
-## Features to be fixed
+<img src="./img/lessons_learned.jpg" alt="Desk photo" width="900" height = "350"/>
 
-1. fontawesome icons do not display when error or success classes are added.
-
-## Drag and Drop Feature Added
-
-1. To make the tasks draggable, add draggable="true" to li in TaskManager class
-
-## Night Mode Feature added
-
-1. Added a toggleable button to the main page to switch between a lighter and a darker themed page.
-
+- Sprint Planning and Agile Project Methodology
+  - Break down the tasks into individual tasks
+  - Pair programming - navigator and driver and walking through the thought process - whiteboarding
+  - CICD - Continuous Integration and continuous development to Netlify website
+- Debugging skills and Test Driven Development
+  - Use Chrome developer tool console extensively
+  - The team has attempted to write test using JEST, however, needs to learn how to import and export variables, methods, class
+- JavaScript language, ES6 some features and API use
+  - DOM manipulation
+  - API, how API connects frontend and backend
+- Object Oriented Programming Design Principles particularly encapsulation
 
 <hr>
 
