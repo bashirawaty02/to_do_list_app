@@ -31,16 +31,7 @@ h1 {
   font-weight: 700;
   text-align: center;
   width: auto;
-<<<<<<< HEAD
-  color: var(--darkgreen);
-  background: linear-gradient(
-      rgba(227, 231, 173, 1),
-      rgba(255, 255, 255, 0.8)
-    ),
-    center no-repeat;
-=======
   color: #cbdfbd;
->>>>>>> 33b48ab9cba705952359492f89f60b4fbfd40efa
   padding: 3rem;
   margin-bottom: 5rem;
   text-transform: uppercase;
