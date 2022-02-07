@@ -344,7 +344,6 @@ function dragLeave(e) {
   // console.log('drg leave');
 }
 
-
 //===============================================================
 // Sprint-3 Stretch Goal : Edit Modal Popup
 //===============================================================
@@ -442,9 +441,9 @@ let weather = {
     document.querySelector(".icon").src =
       "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector(".description").innerText = description;
-    document.querySelector(".temp").innerText = temp + "°C";
+    document.querySelector(".temp").innerText = Math.floor(temp) + "°C";
     document.querySelector(".heading").style.backgroundImage =
-      "url('https://source.unsplash.com/1110x400/?" + name + ")";
+      "url('https://source.unsplash.com/1110x400/?" + name + "/landscape)";
   },
   search: function () {
     this.fetchWeather(document.querySelector(".search-bar").value);
