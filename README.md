@@ -203,7 +203,7 @@ The followings are the main classes of To Do Application:
   ```
   git add .
   git commit -m "write your comments"
-  git push origin main
+  git push origin yourbranchName
   ```
 
 - If you push your changes successfully, you will see **Compare & pull request**
