@@ -144,7 +144,7 @@ The followings are the main classes of To Do Application:
 1. **Open Weather API :** Call Open Weather API and display weather of the searched city
 2. **Unplash API :** Call Unplash API and update images to reflect the city name searched
 3. **Light and Dark Mode :** Added a toggleable button to the main page to switch between a lighter and a darker themed page.
-4. **Drag and Drop API :** To make the tasks draggable, add draggable="true" to li in TaskManager class
+4. **Drag and Drop API :** To make the tasks draggable, add draggable="true" to li in TaskManager class. Implement draggable and drop events
 
 ## Lessons Learned
 
