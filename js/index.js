@@ -297,39 +297,17 @@ const todos = document.querySelectorAll(".list-group-item");
 const dropBoxes = document.querySelectorAll(".drop-box");
 
 for (const dropBox of dropBoxes) {
-  // dropBox.addEventListener("dragenter", dragEnter);
   dropBox.addEventListener("dragover", dragOver);
-  // dropBox.addEventListener("dragleave", dragLeave);
   dropBox.addEventListener("drop", dragDrop);
 }
 
 function dragStart(e) {
   e.dataTransfer.setData("text/plain", e.target.id);
-  // console.log(e.target.id);
-  // draggableToDo = e.target;
-  // draggableToDo = this; // this points to the element the event occurs
-  // console.log('dragStart....')
 }
 
-function dragOver(e) {
-  // default behaviour does not allow tha dropped target area to grab the draggable elements. Therefore, you need to prevent this behaviour
-  e.preventDefault();
-  // console.log('drg over');
-}
-function dragEnter(e) {
-  this.style.border = "3px #F4B400 dotted";
-  // console.log('drg enter');
-}
-function dragLeave(e) {
-  this.style.border = "var(--green) 1px solid";
-  // console.log('drg leave');
-}
 function dragDrop(e) {
   const id = e.dataTransfer.getData("text");
-  // console.log(id);
-  // console.log(id);
   const draggableElement = document.getElementById(id);
-  // console.log(draggableElement);
   this.lastElementChild.appendChild(draggableElement);
   if (e.target.lastElementChild.id === "todo") {
     const taskId = Number(id);
@@ -351,6 +329,21 @@ function dragDrop(e) {
     taskManager.render();
   }
 }
+
+function dragOver(e) {
+  // default behaviour does not allow tha dropped target area to grab the draggable elements. Therefore, you need to prevent this behaviour
+  e.preventDefault();
+  // console.log('drg over');
+}
+function dragEnter(e) {
+  this.style.border = "3px #F4B400 dotted";
+  // console.log('drg enter');
+}
+function dragLeave(e) {
+  this.style.border = "var(--green) 1px solid";
+  // console.log('drg leave');
+}
+
 
 //===============================================================
 // Sprint-3 Stretch Goal : Edit Modal Popup
@@ -435,7 +428,6 @@ let weather = {
         city +
         "&units=metric&appid=" +
         this.apiKey
-      // `https://api.openweathermap.org/data/2.5/weather?q=${this.city}&units=metric&appid=${this.apiKey}`
     )
       .then((response) => response.json())
       .then((data) => this.displayWeather(data));
@@ -451,11 +443,6 @@ let weather = {
       "http://openweathermap.org/img/wn/" + icon + "@2x.png";
     document.querySelector(".description").innerText = description;
     document.querySelector(".temp").innerText = temp + "°C";
-    // document.querySelector(".humidity").innerText =
-    //   "Humidity : " + humidity + "%";
-    // document.querySelector(".wind").innerText =
-    //   "Wind Speed : " + speed + " km/hr";
-    // document.querySelector(".weather").classList.remove("loading");
     document.querySelector(".heading").style.backgroundImage =
       "url('https://source.unsplash.com/1110x400/?" + name + ")";
   },

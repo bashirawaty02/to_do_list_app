@@ -1,5 +1,4 @@
 "use Strict";
-
 class TaskManager {
   constructor(currentId = 0) {
     this.tasks = [];
@@ -21,7 +20,6 @@ class TaskManager {
     }
     return status;
   }
-
   createTaskHTML(id, name, description, assignedTo, dueDate, status) {
     const html = `
     <li data-task-id=${id} class="list-group-item"  ondragstart="dragStart(event)"  draggable="true" id="${id}">
@@ -122,7 +120,6 @@ class TaskManager {
     }
     return foundTask;
   }
-
   //Task 9: Persisting Tasks to LocalStorage
   save() {
     const tasksJson = JSON.stringify(this.tasks);
