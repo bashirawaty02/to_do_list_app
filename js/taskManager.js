@@ -7,23 +7,23 @@ class TaskManager {
   }
 
   formatStatus(status) {
-  switch (status) {
-    case "toDo":
-      status = "TO DO";
-      break;
-    case "inProgress":
-      status = "IN PROGRESS";
-      break;
-    // case "done":
-    //   status = "DONE";
-    default:
-      status = status.toUpperCase();
+    switch (status) {
+      case "toDo":
+        status = "TO DO";
+        break;
+      case "inProgress":
+        status = "IN PROGRESS";
+        break;
+      // case "done":
+      //   status = "DONE";
+      default:
+        status = status.toUpperCase();
+    }
+    return status;
   }
-  return status;
-};
 
-createTaskHTML(id, name, description, assignedTo, dueDate, status){
-  const html = `
+  createTaskHTML(id, name, description, assignedTo, dueDate, status) {
+    const html = `
     <li data-task-id=${id} class="list-group-item"  ondragstart="dragStart(event)"  draggable="true" id="${id}">
       <div class="d-flex w-100 mt-2 justify-content-between align-items-center">
           <h5>${name}</h5>
@@ -54,8 +54,8 @@ createTaskHTML(id, name, description, assignedTo, dueDate, status){
           <button class="btn btn-outline-danger delete-button">DELETE</button>
       </div>
     </li><br>`;
-  return html;
-};
+    return html;
+  }
   addTask(name, description, assignedTo, dueDate, status) {
     const task = {
       id: ++this.currentId,

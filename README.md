@@ -7,8 +7,8 @@ This repository contains the **_To Do List App_** application project code. This
 </p>
 
 The application enables the user to add tasks, update and delete tasks.
-
-Github Repo: [https://github.com/ktSuW/to_do_list_app]
+- Deployed Site : [To Do App](https://genaustodo.netlify.app/)
+- Github Repo: [https://github.com/ktSuW/to_do_list_app]
 
 Contributor :
 
